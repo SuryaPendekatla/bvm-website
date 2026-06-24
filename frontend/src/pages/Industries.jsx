@@ -4,39 +4,48 @@ import TechnologyEcosystem from "../components/TechnologyEcosystem/TechnologyEco
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
+import {
+  Landmark,
+  HeartPulse,
+  Factory,
+  ShoppingCart,
+  Cpu,
+  GraduationCap,
+} from "lucide-react";
+
 const industries = [
   {
-    icon: "🏦",
+    icon: Landmark,
     title: "Banking & Financial Services",
     description:
       "AI-powered risk management, fraud detection, customer intelligence, and operational automation.",
   },
   {
-    icon: "🏥",
+    icon: HeartPulse,
     title: "Healthcare",
     description:
       "Patient engagement, clinical insights, workflow automation, and intelligent healthcare operations.",
   },
   {
-    icon: "🏭",
+    icon: Factory,
     title: "Manufacturing",
     description:
       "Predictive maintenance, quality assurance, supply chain intelligence, and smart operations.",
   },
   {
-    icon: "🛒",
+    icon: ShoppingCart,
     title: "Retail & E-Commerce",
     description:
       "Personalization, customer analytics, recommendation engines, and inventory optimization.",
   },
   {
-    icon: "💻",
+    icon: Cpu,
     title: "Technology",
     description:
       "AI-native platforms, engineering acceleration, developer productivity, and automation.",
   },
   {
-    icon: "🎓",
+    icon: GraduationCap,
     title: "Education",
     description:
       "Personalized learning, digital platforms, intelligent content delivery, and analytics.",
@@ -87,26 +96,30 @@ export default function Industries() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {industries.map((industry, index) => (
-              <div
-                key={index}
-                className="group bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-500"
-              >
+            {industries.map((industry, index) => {
+              const Icon = industry.icon;
 
-                <div className="text-5xl mb-6">
-                  {industry.icon}
+              return (
+                <div
+                  key={index}
+                  className="group bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] hover:-translate-y-2 transition-all duration-500"
+                >
+
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-cyan-400" />
+                  </div>
+
+                  <h3 className="text-white text-2xl font-semibold mb-4 text-center group-hover:text-cyan-400 transition">
+                    {industry.title}
+                  </h3>
+
+                  <p className="text-slate-400 text-center">
+                    {industry.description}
+                  </p>
+
                 </div>
-
-                <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-cyan-400 transition">
-                  {industry.title}
-                </h3>
-
-                <p className="text-slate-400">
-                  {industry.description}
-                </p>
-
-              </div>
-            ))}
+              );
+            })}
 
           </div>
 
@@ -188,39 +201,23 @@ export default function Industries() {
           <div className="grid md:grid-cols-4 gap-6">
 
             <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
-              <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                40%
-              </h3>
-              <p className="text-slate-400">
-                Productivity Increase
-              </p>
+              <h3 className="text-cyan-400 text-3xl font-bold mb-2">40%</h3>
+              <p className="text-slate-400">Productivity Increase</p>
             </div>
 
             <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
-              <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                30%
-              </h3>
-              <p className="text-slate-400">
-                Cost Reduction
-              </p>
+              <h3 className="text-cyan-400 text-3xl font-bold mb-2">30%</h3>
+              <p className="text-slate-400">Cost Reduction</p>
             </div>
 
             <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
-              <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                3x
-              </h3>
-              <p className="text-slate-400">
-                Faster Delivery
-              </p>
+              <h3 className="text-cyan-400 text-3xl font-bold mb-2">3x</h3>
+              <p className="text-slate-400">Faster Delivery</p>
             </div>
 
             <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
-              <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                95%
-              </h3>
-              <p className="text-slate-400">
-                Client Satisfaction
-              </p>
+              <h3 className="text-cyan-400 text-3xl font-bold mb-2">95%</h3>
+              <p className="text-slate-400">Client Satisfaction</p>
             </div>
 
           </div>

@@ -1,37 +1,46 @@
 import { motion } from "framer-motion";
 
+import azureLogo from "../../assets/logos/azure.svg";
+import awsLogo from "../../assets/logos/aws.svg";
+import googleLogo from "../../assets/logos/google-cloud.svg";
+import openaiLogo from "../../assets/logos/openai.svg";
+import anthropicLogo from "../../assets/logos/anthropic.svg";
+import salesforceLogo from "../../assets/logos/salesforce.svg";
+import snowflakeLogo from "../../assets/logos/snowflake.svg";
+import databricksLogo from "../../assets/logos/databricks.svg";
+
 const technologies = [
   {
     name: "Microsoft Azure",
-    logo: "☁️",
+    logo: azureLogo,
   },
   {
     name: "AWS",
-    logo: "🚀",
+    logo: awsLogo,
   },
   {
     name: "Google Cloud",
-    logo: "🌐",
+    logo: googleLogo,
   },
   {
     name: "OpenAI",
-    logo: "🤖",
+    logo: openaiLogo,
   },
   {
     name: "Anthropic",
-    logo: "🧠",
+    logo: anthropicLogo,
   },
   {
     name: "Salesforce",
-    logo: "⚡",
+    logo: salesforceLogo,
   },
   {
     name: "Snowflake",
-    logo: "❄️",
+    logo: snowflakeLogo,
   },
   {
     name: "Databricks",
-    logo: "📊",
+    logo: databricksLogo,
   },
 ];
 
@@ -88,9 +97,13 @@ export default function TechnologyEcosystem() {
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
               </div>
 
-              {/* Logo Area */}
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center text-3xl mx-auto mb-6">
-                {tech.logo}
+              {/* Logo */}
+              <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center p-4 mx-auto mb-6 shadow-lg">
+                <img
+                  src={tech.logo}
+                  alt={tech.name}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
 
               <h3 className="text-white font-semibold text-lg text-center group-hover:text-cyan-400 transition">
@@ -127,3 +140,4 @@ export default function TechnologyEcosystem() {
     </section>
   );
 }
+

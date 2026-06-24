@@ -19,10 +19,24 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-4xl font-bold mb-4">
-              <span className="text-white">BVM</span>
-              <span className="text-cyan-400"></span>
-            </h3>
+
+            <div className="flex items-center gap-3 mb-4">
+
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl">
+                B
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-white">
+                  BVMCS
+                </h3>
+
+                <p className="text-xs text-slate-400">
+                  AI Transformation Partner
+                </p>
+              </div>
+
+            </div>
 
             <p className="text-slate-400 leading-relaxed">
               Accelerating enterprise growth through AI Enablement,
@@ -35,46 +49,81 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition font-semibold"
               >
                 in
               </a>
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition font-semibold"
               >
                 X
               </a>
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition font-semibold"
               >
                 f
               </a>
 
             </div>
+
           </div>
 
           {/* Services */}
           <div>
+
             <h4 className="text-white font-semibold mb-5">
               Services
             </h4>
 
             <ul className="space-y-3 text-slate-400">
-              <li>AI Enablement</li>
-              <li>AI Strategy & Consulting</li>
-              <li>Generative AI Solutions</li>
-              <li>AI Agents & Automation</li>
-              <li>Cloud Transformation</li>
-              <li>Digital Engineering</li>
+
+              <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  AI Enablement
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  AI Strategy & Consulting
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  Generative AI Solutions
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  AI Agents & Automation
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  Cloud Transformation
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  Digital Engineering
+                </Link>
+              </li>
+
             </ul>
+
           </div>
 
           {/* Quick Links */}
           <div>
+
             <h4 className="text-white font-semibold mb-5">
               Quick Links
             </h4>
@@ -82,55 +131,42 @@ export default function Footer() {
             <ul className="space-y-3 text-slate-400">
 
               <li>
-                <Link
-                  to="/"
-                  className="hover:text-cyan-400 transition"
-                >
+                <Link to="/" className="hover:text-cyan-400 transition">
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/about"
-                  className="hover:text-cyan-400 transition"
-                >
+                <Link to="/about" className="hover:text-cyan-400 transition">
                   About
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/services"
-                  className="hover:text-cyan-400 transition"
-                >
+                <Link to="/services" className="hover:text-cyan-400 transition">
                   Services
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/industries"
-                  className="hover:text-cyan-400 transition"
-                >
+                <Link to="/industries" className="hover:text-cyan-400 transition">
                   Industries
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-cyan-400 transition"
-                >
+                <Link to="/contact" className="hover:text-cyan-400 transition">
                   Contact
                 </Link>
               </li>
 
             </ul>
+
           </div>
 
           {/* Contact */}
           <div>
+
             <h4 className="text-white font-semibold mb-5">
               Contact
             </h4>
@@ -141,22 +177,12 @@ export default function Footer() {
               <li>India</li>
             </ul>
 
-            <motion.button
-              animate={{
-                boxShadow: [
-                  "0 0 20px rgba(34,211,238,.2)",
-                  "0 0 40px rgba(34,211,238,.4)",
-                  "0 0 20px rgba(34,211,238,.2)",
-                ],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
-              className="mt-6 bg-gradient-to-r from-cyan-500 to-purple-500 px-5 py-3 rounded-xl text-white font-medium"
+            <Link
+              to="/contact"
+              className="inline-block mt-6 bg-gradient-to-r from-cyan-500 to-purple-500 px-5 py-3 rounded-xl text-white font-medium hover:scale-105 transition"
             >
               Book a Call
-            </motion.button>
+            </Link>
 
           </div>
 
@@ -166,6 +192,7 @@ export default function Footer() {
         <div className="mt-20 mb-12 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 flex flex-col md:flex-row justify-between items-center gap-6">
 
           <div>
+
             <h3 className="text-2xl font-bold text-white">
               Ready to Accelerate AI Transformation?
             </h3>
@@ -173,11 +200,15 @@ export default function Footer() {
             <p className="text-slate-400 mt-2">
               Let's build your AI-first future together.
             </p>
+
           </div>
 
-          <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition">
+          <Link
+            to="/contact"
+            className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition"
+          >
             Book a Call
-          </button>
+          </Link>
 
         </div>
 
@@ -188,8 +219,9 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
+
           <p className="text-slate-500 text-sm">
-            © 2026 BVMCS. All rights reserved.
+            © {new Date().getFullYear()} BVMCS. All rights reserved.
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0 text-slate-500 text-sm">
@@ -215,9 +247,12 @@ export default function Footer() {
             </a>
 
           </div>
+
         </motion.div>
 
       </div>
+
     </footer>
   );
 }
+

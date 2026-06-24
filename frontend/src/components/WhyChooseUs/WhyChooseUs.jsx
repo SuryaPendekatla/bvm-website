@@ -1,27 +1,33 @@
 import { motion } from "framer-motion";
+import {
+  Brain,
+  Zap,
+  ShieldCheck,
+  TrendingUp,
+} from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 
 const features = [
   {
-    icon: "🤖",
+    icon: Brain,
     title: "AI-First Methodology",
     description:
       "Every engagement is designed around AI enablement, automation, and intelligent decision-making.",
   },
   {
-    icon: "⚡",
+    icon: Zap,
     title: "Accelerated Delivery",
     description:
       "Rapid execution models help enterprises move from strategy to implementation faster.",
   },
   {
-    icon: "🔒",
+    icon: ShieldCheck,
     title: "Enterprise Security",
     description:
       "Security, governance, compliance, and risk management are embedded from day one.",
   },
   {
-    icon: "📈",
+    icon: TrendingUp,
     title: "Measurable Business Impact",
     description:
       "Focused on outcomes including cost optimization, productivity gains, and revenue growth.",
@@ -65,41 +71,45 @@ export default function WhyChooseUs() {
         {/* Feature Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {features.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.12,
-              }}
-              whileHover={{
-                y: -12,
-                scale: 1.03,
-              }}
-              className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-500"
-            >
-              {/* Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
-              </div>
+          {features.map((item, index) => {
+            const Icon = item.icon;
 
-              {/* Icon */}
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center text-4xl mb-6">
-                {item.icon}
-              </div>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.12,
+                }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.03,
+                }}
+                className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-500"
+              >
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
+                </div>
 
-              <h3 className="text-white text-xl font-semibold mb-4 group-hover:text-cyan-400 transition">
-                {item.title}
-              </h3>
+                {/* Icon */}
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center mb-6">
+                  <Icon className="w-10 h-10 text-cyan-400" />
+                </div>
 
-              <p className="text-slate-400 leading-relaxed">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+                <h3 className="text-white text-xl font-semibold mb-4 group-hover:text-cyan-400 transition">
+                  {item.title}
+                </h3>
+
+                <p className="text-slate-400 leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            );
+          })}
 
         </div>
 
@@ -177,11 +187,11 @@ export default function WhyChooseUs() {
             cloud transformation, and workforce enablement with confidence.
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-300">
-            <span>✓ AI Enablement</span>
-            <span>✓ Cloud Transformation</span>
-            <span>✓ Intelligent Automation</span>
-            <span>✓ Digital Engineering</span>
+          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-medium">
+            <span className="text-cyan-400">AI Enablement</span>
+            <span className="text-cyan-400">Cloud Transformation</span>
+            <span className="text-cyan-400">Intelligent Automation</span>
+            <span className="text-cyan-400">Digital Engineering</span>
           </div>
         </motion.div>
 
@@ -189,4 +199,3 @@ export default function WhyChooseUs() {
     </section>
   );
 }
-

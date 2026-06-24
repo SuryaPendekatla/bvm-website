@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+import {
+  Brain,
+  Sparkles,
+  Lightbulb,
+  Bot,
+  Cloud,
+  Code2,
+} from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 
 const services = [
@@ -6,37 +14,37 @@ const services = [
     title: "AI Enablement",
     description:
       "Empower teams with AI tools, copilots, and intelligent workflows to accelerate productivity.",
-    icon: "🤖",
+    icon: Brain,
   },
   {
     title: "Generative AI Solutions",
     description:
       "Build enterprise-grade AI assistants, RAG systems, copilots, and custom LLM applications.",
-    icon: "⚡",
+    icon: Sparkles,
   },
   {
     title: "AI Strategy & Consulting",
     description:
       "Create a practical roadmap for AI adoption aligned with business objectives.",
-    icon: "📈",
+    icon: Lightbulb,
   },
   {
     title: "Intelligent Automation",
     description:
       "Automate repetitive workflows using AI agents, RPA, and process orchestration.",
-    icon: "🔄",
+    icon: Bot,
   },
   {
     title: "Cloud Transformation",
     description:
       "Modernize infrastructure with Azure, AWS, and Google Cloud for scalable growth.",
-    icon: "☁️",
+    icon: Cloud,
   },
   {
     title: "Digital Engineering",
     description:
       "Build modern digital products, platforms, and enterprise applications faster.",
-    icon: "💻",
+    icon: Code2,
   },
 ];
 
@@ -79,47 +87,51 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-              whileHover={{
-                y: -12,
-                scale: 1.02,
-              }}
-              className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden hover:border-cyan-400 transition-all duration-500"
-            >
+          {services.map((service, index) => {
+            const Icon = service.icon;
 
-              {/* Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
-              </div>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.02,
+                }}
+                className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden hover:border-cyan-400 transition-all duration-500"
+              >
 
-              {/* Icon */}
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center text-3xl mb-6">
-                {service.icon}
-              </div>
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
+                </div>
 
-              <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-cyan-400 transition">
-                {service.title}
-              </h3>
+                {/* Icon */}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center mb-6">
+                  <Icon className="w-8 h-8 text-cyan-400" />
+                </div>
 
-              <p className="text-slate-400 leading-relaxed">
-                {service.description}
-              </p>
+                <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-cyan-400 transition">
+                  {service.title}
+                </h3>
 
-              <button className="mt-8 text-cyan-400 hover:text-white transition font-medium">
-                Learn More →
-              </button>
+                <p className="text-slate-400 leading-relaxed">
+                  {service.description}
+                </p>
 
-            </motion.div>
-          ))}
+                <button className="mt-8 text-cyan-400 hover:text-white transition font-medium">
+                  Learn More →
+                </button>
+
+              </motion.div>
+            );
+          })}
 
         </div>
 

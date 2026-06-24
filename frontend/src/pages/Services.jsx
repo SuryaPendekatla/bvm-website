@@ -4,39 +4,48 @@ import TechnologyEcosystem from "../components/TechnologyEcosystem/TechnologyEco
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
+import {
+  Brain,
+  Lightbulb,
+  Sparkles,
+  Bot,
+  Cloud,
+  Code2,
+} from "lucide-react";
+
 const services = [
   {
-    icon: "🤖",
+    icon: Brain,
     title: "AI Enablement",
     description:
       "Empower teams with AI tools, governance frameworks, and adoption strategies.",
   },
   {
-    icon: "🧠",
+    icon: Lightbulb,
     title: "AI Strategy & Consulting",
     description:
       "Define AI roadmaps, operating models, and transformation strategies.",
   },
   {
-    icon: "✨",
+    icon: Sparkles,
     title: "Generative AI Solutions",
     description:
       "Build copilots, assistants, knowledge systems, and GenAI platforms.",
   },
   {
-    icon: "⚡",
+    icon: Bot,
     title: "AI Agents & Automation",
     description:
       "Automate business processes using intelligent agents and workflows.",
   },
   {
-    icon: "☁️",
+    icon: Cloud,
     title: "Cloud Transformation",
     description:
       "Modernize infrastructure and accelerate innovation with cloud-native architectures.",
   },
   {
-    icon: "💻",
+    icon: Code2,
     title: "Digital Engineering",
     description:
       "Build scalable digital products, platforms, and enterprise applications.",
@@ -83,34 +92,40 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section className="pb-24 bg-[#050505]">
+
         <div className="max-w-7xl mx-auto px-6">
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-500"
-              >
+            {services.map((service, index) => {
+              const Icon = service.icon;
 
-                <div className="text-5xl mb-6">
-                  {service.icon}
+              return (
+                <div
+                  key={index}
+                  className="group bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] hover:-translate-y-2 transition-all duration-500"
+                >
+
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-cyan-400" />
+                  </div>
+
+                  <h3 className="text-white text-2xl font-semibold mb-4 text-center group-hover:text-cyan-400 transition">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-slate-400 text-center">
+                    {service.description}
+                  </p>
+
                 </div>
-
-                <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-cyan-400 transition">
-                  {service.title}
-                </h3>
-
-                <p className="text-slate-400">
-                  {service.description}
-                </p>
-
-              </div>
-            ))}
+              );
+            })}
 
           </div>
 
         </div>
+
       </section>
 
       {/* Process */}
@@ -132,25 +147,22 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-4 gap-8">
 
-            {[
-              "Discover",
-              "Design",
-              "Deploy",
-              "Scale",
-            ].map((step, index) => (
-              <div
-                key={index}
-                className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 text-center"
-              >
-                <div className="text-cyan-400 text-4xl font-bold mb-4">
-                  0{index + 1}
-                </div>
+            {["Discover", "Design", "Deploy", "Scale"].map(
+              (step, index) => (
+                <div
+                  key={index}
+                  className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 text-center"
+                >
+                  <div className="text-cyan-400 text-4xl font-bold mb-4">
+                    0{index + 1}
+                  </div>
 
-                <h3 className="text-white text-xl font-semibold">
-                  {step}
-                </h3>
-              </div>
-            ))}
+                  <h3 className="text-white text-xl font-semibold">
+                    {step}
+                  </h3>
+                </div>
+              )
+            )}
 
           </div>
 
@@ -215,7 +227,7 @@ export default function ServicesPage() {
 
       <TechnologyEcosystem />
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="pb-24 bg-[#050505]">
 
         <div className="text-center max-w-4xl mx-auto px-6">

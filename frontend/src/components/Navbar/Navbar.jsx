@@ -42,10 +42,22 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-3xl font-bold tracking-wider"
+            whileHover={{ scale: 1.03 }}
+            className="flex items-center gap-3"
           >
-            <span className="text-white">BVM</span>
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/20">
+              B
+            </div>
+
+            <div>
+              <h2 className="text-white text-xl font-bold leading-none">
+                BVM
+              </h2>
+
+              <p className="text-[11px] text-slate-400 tracking-wider uppercase mt-1">
+                AI Transformation
+              </p>
+            </div>
           </motion.div>
         </Link>
 
@@ -183,3 +195,4 @@ export default function Navbar() {
     </motion.header>
   );
 }
+
