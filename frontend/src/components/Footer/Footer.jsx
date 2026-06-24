@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <h3 className="text-4xl font-bold mb-4">
               <span className="text-white">BVM</span>
-              <span className="text-cyan-400">CS</span>
+              <span className="text-cyan-400"></span>
             </h3>
 
             <p className="text-slate-400 leading-relaxed">
