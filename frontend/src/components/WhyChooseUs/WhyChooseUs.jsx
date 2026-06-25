@@ -55,11 +55,11 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
           <p className="text-cyan-400 uppercase tracking-widest mb-3">
-            Why BVMCS
+            Why BVM
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Why Enterprises Choose BVMCS
+            Why Enterprises Choose BVM
           </h2>
 
           <p className="text-slate-400 max-w-3xl mx-auto">

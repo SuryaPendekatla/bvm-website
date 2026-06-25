@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "What AI services does BVMCS provide?",
+    question: "What AI services does BVM provide?",
     answer:
       "We provide AI Enablement, AI Strategy & Consulting, Generative AI Solutions, AI Agents & Automation, Cloud Transformation, and Enterprise AI Integration.",
   },

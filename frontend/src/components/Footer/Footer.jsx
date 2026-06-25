@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import bvmlogo from "../../assets/logos/bvm-logo.svg";
 
 export default function Footer() {
   return (
@@ -22,9 +23,11 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 mb-4">
 
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl">
-                B
-              </div>
+               <img
+                src={bvmlogo}
+                alt="BVM Logo"
+                className="h-11 w-auto object-contain"
+              />
 
               <div>
                 <h3 className="text-2xl font-bold text-white">
@@ -32,7 +35,7 @@ export default function Footer() {
                 </h3>
 
                 <p className="text-xs text-slate-400">
-                  AI Transformation Partner
+                  AI Transformation 
                 </p>
               </div>
 
