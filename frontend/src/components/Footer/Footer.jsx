@@ -28,7 +28,7 @@ export default function Footer() {
 
               <div>
                 <h3 className="text-2xl font-bold text-white">
-                  BVMCS
+                  BVM
                 </h3>
 
                 <p className="text-xs text-slate-400">
