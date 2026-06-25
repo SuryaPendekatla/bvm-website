@@ -10,8 +10,8 @@ import snowflake from "../../assets/logos/snowflake.svg";
 import databricks from "../../assets/logos/databricks.svg";
 
 const technologies = [
-  { name: "Azure", logo: azure },
-  { name: "AWS", logo: aws },
+  { name: "Microsoft Azure", logo: azure },
+  { name: "Amazon AWS", logo: aws },
   { name: "Google Cloud", logo: googleCloud },
   { name: "OpenAI", logo: openai },
   { name: "Anthropic", logo: anthropic },
@@ -22,73 +22,162 @@ const technologies = [
 
 export default function TechnologyMarquee() {
   return (
-    <section className="relative py-16 bg-[#080808] overflow-hidden">
+    <section className="relative overflow-hidden bg-[#080808] py-24">
 
-      {/* Glow Effects */}
-      <div className="absolute left-0 top-0 w-96 h-96 bg-cyan-500/5 blur-[180px]" />
-      <div className="absolute right-0 bottom-0 w-96 h-96 bg-purple-500/5 blur-[180px]" />
+      {/* Background Glow */}
+      <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[180px]" />
+      <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-purple-500/10 blur-[180px]" />
 
-      <div className="text-center mb-10 relative z-10">
-        <p className="text-cyan-400 uppercase tracking-widest text-sm mb-3">
-          Technology Ecosystem
-        </p>
+      {/* Top Accent */}
+      <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
 
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
-          Powered By Industry-Leading Platforms
-        </h2>
-      </div>
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
 
-      <div className="relative overflow-hidden">
+        {/* Section Header */}
 
         <motion.div
-          animate={{
-            x: ["0%", "-50%"],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 25,
-            ease: "linear",
-          }}
-          className="flex gap-6 w-max"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16 text-center"
         >
-          {[...technologies, ...technologies].map((tech, index) => (
-            <motion.div
-              key={index}
-              whileHover={{
-                y: -8,
-                scale: 1.05,
-              }}
-              className="
-                flex items-center gap-4
-                bg-white/[0.03]
-                border border-white/10
-                backdrop-blur-xl
-                rounded-2xl
-                px-8 py-5
-                min-w-[240px]
-                hover:border-cyan-400
-                hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]
-                transition-all duration-300
-              "
-            >
-              <img
-                src={tech.logo}
-                alt={tech.name}
-                className="h-12 w-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-              />
 
-              <span className="text-white font-medium">
-                {tech.name}
-              </span>
-            </motion.div>
-          ))}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-5 py-2 backdrop-blur-xl">
+
+            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+
+            <span className="text-[11px] uppercase tracking-[0.35em] font-semibold text-cyan-300">
+              Technology Ecosystem
+            </span>
+
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+
+            Powered by
+
+            <br />
+
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Industry-Leading Platforms
+            </span>
+
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+            Leveraging enterprise AI, cloud, automation, and data platforms
+            to build secure, scalable, and future-ready digital solutions.
+          </p>
+
         </motion.div>
 
-      </div>
+        {/* Marquee */}
 
-      {/* Fade Edges */}
-      <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#080808] to-transparent z-20" />
-      <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#080808] to-transparent z-20" />
+        <div className="relative overflow-hidden">
+
+                    <motion.div
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex w-max gap-8 py-4"
+          >
+            {[...technologies, ...technologies].map((tech, index) => (
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -10,
+                  scale: 1.04,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 18,
+                }}
+                className="
+                  group
+                  relative
+                  flex
+                  min-w-[280px]
+                  items-center
+                  gap-5
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-gradient-to-br
+                  from-white/[0.05]
+                  to-white/[0.02]
+                  px-8
+                  py-6
+                  backdrop-blur-2xl
+                  transition-all
+                  duration-500
+                  hover:border-cyan-400/40
+                  hover:shadow-[0_0_45px_rgba(34,211,238,0.18)]
+                "
+              >
+
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute -left-10 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+                  <div className="absolute -right-10 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-purple-500/10 blur-3xl" />
+                </div>
+
+                {/* Logo */}
+                <div className="relative flex h-14 w-20 items-center justify-center">
+
+                  <div className="absolute h-14 w-14 rounded-full bg-cyan-500/10 blur-xl opacity-0 transition-all duration-500 group-hover:opacity-100" />
+
+                  <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className="
+                      relative
+                      max-h-10
+                      max-w-[90px]
+                      object-contain
+                      opacity-75
+                      grayscale
+                      transition-all
+                      duration-500
+                      group-hover:scale-110
+                      group-hover:opacity-100
+                      group-hover:grayscale-0
+                    "
+                  />
+
+                </div>
+
+                {/* Divider */}
+                <div className="h-10 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+                {/* Name */}
+                <div className="flex flex-col">
+
+                  <span className="text-lg font-semibold tracking-wide text-white">
+                    {tech.name}
+                  </span>
+
+                </div>
+
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Fade Edges */}
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-40 bg-gradient-to-r from-[#080808] to-transparent" />
+
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-40 bg-gradient-to-l from-[#080808] to-transparent" />
+
+        </div>
+
+      </div>
 
     </section>
   );

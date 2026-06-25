@@ -4,7 +4,7 @@ import Particles from "../Particles/Particles";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-black via-[#050505] to-black text-white pt-24 md:pt-32 overflow-hidden">
+    <section className="relative min-h-[95vh] bg-gradient-to-b from-black via-[#050505] to-black text-white pt-24 md:pt-32 overflow-hidden">
       <Particles />
       {/* AI Grid Background */}
       <div className="absolute inset-0 opacity-20">
@@ -42,7 +42,7 @@ export default function Hero() {
         className="absolute bottom-40 left-40 w-32 h-32 rounded-full bg-purple-500/20 blur-[70px]"
       />
 
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6 grid xl:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 grid xl:grid-cols-2 gap-20 items-center relative z-10">
 
         {/* Left Content */}
         <motion.div
@@ -54,7 +54,7 @@ export default function Hero() {
             AI-FIRST. HUMAN-LED.
           </p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+          <h1 className="text-[42px] sm:text-[54px] lg:text-[66px] xl:text-[78px] font-bold leading-[0.95] tracking-[-0.04em]">
             Accelerate Enterprise Growth
             <br />
 
@@ -67,7 +67,7 @@ export default function Hero() {
             Digital Transformation
           </h1>
 
-          <p className="mt-8 text-xl text-slate-300 max-w-xl leading-relaxed">
+          <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-slate-300/90">
             BVM helps organizations unlock measurable business value through
             AI Enablement, Intelligent Automation, Cloud Transformation,
             Digital Engineering, and Strategic Talent Solutions.

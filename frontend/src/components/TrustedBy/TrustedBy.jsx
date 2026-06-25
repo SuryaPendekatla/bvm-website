@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
+import googleCloudLogo from "../../assets/logos/google-cloud.svg";
+import awsLogo from "../../assets/logos/aws.svg";
+import openaiLogo from "../../assets/logos/openai.svg";
+import salesforceLogo from "../../assets/logos/salesforce.svg";
+import azureLogo from "../../assets/logos/azure.svg";
+import snowflakeLogo from "../../assets/logos/snowflake.svg";
 
 const companies = [
-  "Microsoft",
-  "Google Cloud",
-  "AWS",
-  "OpenAI",
-  "Salesforce",
-  "Oracle",
+ { name: "Google Cloud", logo: googleCloudLogo },
+  { name: "AWS", logo: awsLogo },
+  { name: "OpenAI", logo: openaiLogo },
+  { name: "Salesforce", logo: salesforceLogo },
+  { name: "Azure", logo: azureLogo },
+  { name: "Snowflake", logo: snowflakeLogo },
 ];
 
 export default function TrustedBy() {
@@ -41,7 +47,17 @@ export default function TrustedBy() {
                 transition-all
               "
             >
-              {company}
+              <div className="flex flex-col items-center justify-center gap-4">
+  <img
+    src={company.logo}
+    alt={company.name}
+    className="h-10 w-auto object-contain opacity-90"
+  />
+
+  <span className="text-sm font-semibold">
+    {company.name}
+  </span>
+</div>
             </motion.div>
           ))}
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import bvmlogo from "../../assets/logos/bvm-logo.svg";
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,9 +47,11 @@ export default function Navbar() {
             whileHover={{ scale: 1.03 }}
             className="flex items-center gap-3"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/20">
-              B
-            </div>
+           <img
+  src={bvmlogo}
+  alt="BVM Logo"
+  className="h-11 w-auto object-contain"
+/>
 
             <div>
               <h2 className="text-white text-xl font-bold leading-none">
