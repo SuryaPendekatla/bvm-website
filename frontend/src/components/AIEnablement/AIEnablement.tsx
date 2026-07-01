@@ -6,9 +6,16 @@ import {
   Network,
   GraduationCap,
   ShieldCheck,
+  type LucideIcon,
 } from "lucide-react";
 
-const aiServices = [
+interface AIService {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const aiServices: AIService[] = [
   {
     icon: Brain,
     title: "AI Strategy & Roadmapping",
@@ -87,7 +94,7 @@ export default function AIEnablement() {
         {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {aiServices.map((service, index) => {
+          {aiServices.map((service: AIService, index: number) => {
             const Icon = service.icon;
 
             return (
@@ -147,4 +154,3 @@ export default function AIEnablement() {
     </section>
   );
 }
-

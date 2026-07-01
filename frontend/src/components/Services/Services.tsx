@@ -6,10 +6,22 @@ import {
   Bot,
   Cloud,
   Code2,
+  type LucideIcon,
 } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 
-const services = [
+interface Service {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+const services: Service[] = [
   {
     title: "AI Enablement",
     description:
@@ -138,7 +150,7 @@ export default function Services() {
         {/* Stats */}
         <div className="grid md:grid-cols-4 gap-6 mt-20 mb-20">
 
-          {[
+          {([
             {
               value: "100+",
               label: "Projects Delivered",
@@ -155,7 +167,7 @@ export default function Services() {
               value: "95%",
               label: "Client Satisfaction",
             },
-          ].map((stat, index) => (
+          ] as Stat[]).map((stat, index) => (
             <motion.div
               key={index}
               whileHover={{

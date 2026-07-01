@@ -4,10 +4,18 @@ import {
   Trophy,
   Globe,
   Star,
+  type LucideIcon,
 } from "lucide-react";
 
+interface Stat {
+  value: string;
+  label: string;
+  icon: LucideIcon;
+  color: string;
+}
+
 export default function Metrics() {
-  const stats = [
+  const stats: Stat[] = [
     {
       value: "100+",
       label: "Projects Delivered",
@@ -112,4 +120,3 @@ export default function Metrics() {
     </section>
   );
 }
-

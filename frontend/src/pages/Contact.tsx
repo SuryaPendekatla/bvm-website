@@ -190,7 +190,7 @@ export default function Contact() {
                   />
 
                   <textarea
-                    rows="5"
+                    rows={5}
                     placeholder="Tell us about your project..."
                     className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
                   />

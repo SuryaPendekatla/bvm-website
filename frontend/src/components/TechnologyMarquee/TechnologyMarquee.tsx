@@ -9,7 +9,12 @@ import salesforce from "../../assets/logos/salesforce.svg";
 import snowflake from "../../assets/logos/snowflake.svg";
 import databricks from "../../assets/logos/databricks.svg";
 
-const technologies = [
+interface Technology {
+  name: string;
+  logo: string;
+}
+
+const technologies: Technology[] = [
   { name: "Microsoft Azure", logo: azure },
   { name: "Amazon AWS", logo: aws },
   { name: "Google Cloud", logo: googleCloud },

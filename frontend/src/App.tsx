@@ -6,13 +6,13 @@ import ServicesPage from "./pages/Services";
 import Industries from "./pages/Industries";
 import Contact from "./pages/Contact";
 
-import CursorGlow from "./components/CursorGlow/CursorGlow";
 import ScrollProgress from "./components/ScrollProgress";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <>
-      <CursorGlow />
+      <ScrollToTop />
       <ScrollProgress />
 
       <Routes>

@@ -6,7 +6,12 @@ import salesforceLogo from "../../assets/logos/salesforce.svg";
 import azureLogo from "../../assets/logos/azure.svg";
 import snowflakeLogo from "../../assets/logos/snowflake.svg";
 
-const companies = [
+interface Company {
+  name: string;
+  logo: string;
+}
+
+const companies: Company[] = [
  { name: "Google Cloud", logo: googleCloudLogo },
   { name: "AWS", logo: awsLogo },
   { name: "OpenAI", logo: openaiLogo },

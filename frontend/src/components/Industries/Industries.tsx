@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
 import {
   Landmark,
   HeartPulse,
@@ -8,7 +9,12 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const industries = [
+interface Industry {
+  title: string;
+  icon: LucideIcon;
+}
+
+const industries: Industry[] = [
   {
     title: "Banking & Financial Services",
     icon: Landmark,
@@ -72,7 +78,7 @@ export default function Industries() {
         {/* Industry Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {industries.map((industry, index) => {
+          {industries.map((industry: Industry, index: number) => {
             const Icon = industry.icon;
 
             return (
@@ -134,4 +140,3 @@ export default function Industries() {
     </section>
   );
 }
-

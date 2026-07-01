@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 
-const roadmapSteps = [
+interface RoadmapStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+const roadmapSteps: RoadmapStep[] = [
 {
 step: "01",
 title: "Discovery",

@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
 
+interface NavLink {
+  name: string;
+  path: string;
+}
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const location = useLocation();
 
@@ -20,7 +24,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Industries", path: "/industries" },
@@ -199,4 +203,3 @@ export default function Navbar() {
     </motion.header>
   );
 }
-

@@ -1,4 +1,6 @@
-export const fadeUp = {
+import type { Variants } from "framer-motion";
+
+export const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 60,
@@ -12,7 +14,7 @@ export const fadeUp = {
   },
 };
 
-export const fadeLeft = {
+export const fadeLeft: Variants = {
   hidden: {
     opacity: 0,
     x: -60,
@@ -26,7 +28,7 @@ export const fadeLeft = {
   },
 };
 
-export const fadeRight = {
+export const fadeRight: Variants = {
   hidden: {
     opacity: 0,
     x: 60,

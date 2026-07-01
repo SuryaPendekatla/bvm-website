@@ -4,10 +4,22 @@ import {
   Zap,
   ShieldCheck,
   TrendingUp,
+  type LucideIcon,
 } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 
-const features = [
+interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+const features: Feature[] = [
   {
     icon: Brain,
     title: "AI-First Methodology",
@@ -116,7 +128,7 @@ export default function WhyChooseUs() {
         {/* Trust Metrics */}
         <div className="grid md:grid-cols-4 gap-6 mt-20 mb-20">
 
-          {[
+          {([
             {
               value: "100+",
               label: "Projects Delivered",
@@ -133,7 +145,7 @@ export default function WhyChooseUs() {
               value: "95%",
               label: "Client Satisfaction",
             },
-          ].map((stat, index) => (
+          ] as Stat[]).map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}

@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 
-const steps = [
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const steps: Step[] = [
   {
     number: "01",
     title: "Discover",

@@ -9,7 +9,12 @@ import salesforceLogo from "../../assets/logos/salesforce.svg";
 import snowflakeLogo from "../../assets/logos/snowflake.svg";
 import databricksLogo from "../../assets/logos/databricks.svg";
 
-const technologies = [
+interface Technology {
+  name: string;
+  logo: string;
+}
+
+const technologies: Technology[] = [
   {
     name: "Microsoft Azure",
     logo: azureLogo,
@@ -140,4 +145,3 @@ export default function TechnologyEcosystem() {
     </section>
   );
 }
-

@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const faqs = [
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
   {
     question: "What AI services does BVM provide?",
     answer:
@@ -30,9 +35,9 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState<number | null>(null);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setActive(active === index ? null : index);
   };
 
@@ -61,7 +66,7 @@ export default function FAQ() {
         </motion.div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq: FAQItem, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}

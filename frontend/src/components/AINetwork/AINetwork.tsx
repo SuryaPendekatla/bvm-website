@@ -1,7 +1,13 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+interface NetworkNode {
+  name: string;
+  x: number;
+  y: number;
+}
+
 // Defined on a uniform 0-100 scale for perfect responsiveness
-const nodes = [
+const nodes: NetworkNode[] = [
   { name: "AI Agents", x: 25, y: 35 },
   { name: "Cloud", x: 30, y: 65 },
   { name: "Security", x: 15, y: 53 },
@@ -14,11 +20,11 @@ export default function AINetwork() {
   // Smooth parallax tracking
   const rawMouseX = useMotionValue(0);
   const rawMouseY = useMotionValue(0);
-  
+
   const mouseX = useSpring(rawMouseX, { stiffness: 40, damping: 25 });
   const mouseY = useSpring(rawMouseY, { stiffness: 40, damping: 25 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     rawMouseX.set((e.clientX - rect.left - rect.width / 2) * 0.04);
     rawMouseY.set((e.clientY - rect.top - rect.height / 2) * 0.04);
@@ -33,7 +39,7 @@ export default function AINetwork() {
     /* 1. Uses bg-transparent to sit naturally on top of your existing page background.
       2. The style mask-image softly bleeds the edges so there's never a harsh "box" boundary.
     */
-    <div 
+    <div
       className="w-full flex items-center justify-center bg-transparent overflow-visible p-4 select-none"
       style={{
         WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
@@ -51,7 +57,7 @@ export default function AINetwork() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
 
         {/* Ambient floating background particles */}
-        {[...Array(20)].map((_, i) => (
+        {[...Array(20)].map((_: unknown, i: number) => (
           <motion.div
             key={`particle-${i}`}
             className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-40 pointer-events-none"
@@ -72,9 +78,9 @@ export default function AINetwork() {
         ))}
 
         {/* Responsive layout vectors */}
-        <svg 
-          className="absolute inset-0 w-full h-full overflow-visible pointer-events-none" 
-          viewBox="0 0 100 100" 
+        <svg
+          className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+          viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
           {/* Geometrically aligned constellation orbit rings */}
@@ -86,13 +92,13 @@ export default function AINetwork() {
 
           {/* Central network branches connecting elements */}
           <g stroke="rgba(255,255,255,0.06)" strokeWidth="0.18">
-            {nodes.map((node, index) => (
+            {nodes.map((node: NetworkNode, index: number) => (
               <line key={`line-${index}`} x1="50" y1="50" x2={node.x} y2={node.y} />
             ))}
           </g>
 
           {/* Dynamic data pulses riding down network paths */}
-          {nodes.map((node, index) => (
+          {nodes.map((node: NetworkNode, index: number) => (
             <motion.circle
               key={`packet-${index}`}
               r="0.35"
@@ -117,7 +123,7 @@ export default function AINetwork() {
         </div>
 
         {/* Outer Interface Hub Nodes */}
-        {nodes.map((node, index) => (
+        {nodes.map((node: NetworkNode, index: number) => (
           <motion.div
             key={index}
             className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2 z-10"
@@ -159,7 +165,7 @@ export default function AINetwork() {
             />
             <div className="w-5 h-5 rounded-full bg-white shadow-[0_0_25px_#ffffff,0_0_45px_#9333ea]" />
           </div>
-          
+
           <span className="mt-4 text-[10px] md:text-xs font-semibold tracking-[0.25em] text-slate-200 whitespace-nowrap drop-shadow-md">
             BVM AI CORE
           </span>

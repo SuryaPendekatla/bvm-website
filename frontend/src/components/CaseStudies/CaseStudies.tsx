@@ -2,7 +2,14 @@ import { motion } from "framer-motion";
 import Particles from "../Particles/Particles";
 import { fadeUp } from "../../utils/animations";
 
-const caseStudies = [
+interface CaseStudy {
+  company: string;
+  metric: string;
+  title: string;
+  result: string;
+}
+
+const caseStudies: CaseStudy[] = [
 {
 company: "GlobalBank",
 metric: "35%",
@@ -27,10 +34,10 @@ result:
 ];
 
 export default function CaseStudies() {
-return ( <section  
+return ( <section
    id="case-studies"
    className="relative bg-[#0A0A0A] py-24 overflow-hidden"
- >         
+ >
 {/* Background Glow */} <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" /> <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
 
   <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -60,7 +67,7 @@ return ( <section
 
     {/* Case Study Cards */}
     <div className="grid md:grid-cols-3 gap-8">
-      {caseStudies.map((study, index) => (
+      {caseStudies.map((study: CaseStudy, index: number) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 60 }}

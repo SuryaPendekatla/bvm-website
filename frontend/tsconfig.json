@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    /* Modules */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    /* React */
+    "jsx": "react-jsx",
+
+    /* Type Checking */
+    "strict": true,
+
+    /* JavaScript Migration */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* Imports */
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+
+    /* Build */
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    /* Types */
+    "types": ["vite/client"]
+  },
+
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

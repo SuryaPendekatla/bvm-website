@@ -4,7 +4,7 @@ export default function Particles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-      {[...Array(35)].map((_, index) => (
+      {[...Array(35)].map((_: unknown, index: number) => (
         <motion.div
           key={index}
           className={`absolute rounded-full shadow-[0_0_12px_currentColor] ${

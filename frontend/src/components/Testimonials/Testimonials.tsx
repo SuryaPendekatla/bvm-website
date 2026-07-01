@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 
-const testimonials = [
+interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+}
+
+const testimonials: Testimonial[] = [
 {
 name: "Sarah Johnson",
 role: "CIO, GlobalBank",

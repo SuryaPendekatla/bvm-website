@@ -35,7 +35,7 @@ export default function Footer() {
                 </h3>
 
                 <p className="text-xs text-slate-400">
-                  AI Transformation 
+                  AI Transformation
                 </p>
               </div>
 
@@ -258,4 +258,3 @@ export default function Footer() {
     </footer>
   );
 }
-
