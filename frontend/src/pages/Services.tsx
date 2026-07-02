@@ -3,6 +3,7 @@ import CTA from "../components/CTA/CTA";
 import TechnologyEcosystem from "../components/TechnologyEcosystem/TechnologyEcosystem";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import CountUp from "../components/CountUp/CountUp";
 
 import {
   Brain,
@@ -12,6 +13,15 @@ import {
   Cloud,
   Code2,
 } from "lucide-react";
+
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
 
 const services = [
   {
@@ -103,11 +113,11 @@ export default function ServicesPage() {
               return (
                 <div
                   key={index}
-                  className="group bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] hover:-translate-y-2 transition-all duration-500"
+                  className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
                 >
 
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-cyan-400" />
+                  <div className="bvm-icon-tile mx-auto mb-6">
+                    <Icon className="w-8 h-8" />
                   </div>
 
                   <h3 className="text-white text-2xl font-semibold mb-4 text-center group-hover:text-cyan-400 transition">
@@ -151,7 +161,7 @@ export default function ServicesPage() {
               (step, index) => (
                 <div
                   key={index}
-                  className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 text-center"
+                  className={`bvm-card ${cardAccents[index % cardAccents.length]} p-8 text-center`}
                 >
                   <div className="text-cyan-400 text-4xl font-bold mb-4">
                     0{index + 1}
@@ -183,36 +193,36 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-4 gap-6">
 
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+            <div className={`bvm-card ${cardAccents[0]} p-6 text-center`}>
               <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                40%
+                <CountUp value="40%" />
               </h3>
               <p className="text-slate-400">
                 Productivity Increase
               </p>
             </div>
 
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+            <div className={`bvm-card ${cardAccents[1]} p-6 text-center`}>
               <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                30%
+                <CountUp value="30%" />
               </h3>
               <p className="text-slate-400">
                 Cost Reduction
               </p>
             </div>
 
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+            <div className={`bvm-card ${cardAccents[2]} p-6 text-center`}>
               <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                3x
+                <CountUp value="3x" />
               </h3>
               <p className="text-slate-400">
                 Faster Delivery
               </p>
             </div>
 
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+            <div className={`bvm-card ${cardAccents[3]} p-6 text-center`}>
               <h3 className="text-cyan-400 text-3xl font-bold mb-2">
-                95%
+                <CountUp value="95%" />
               </h3>
               <p className="text-slate-400">
                 Client Satisfaction

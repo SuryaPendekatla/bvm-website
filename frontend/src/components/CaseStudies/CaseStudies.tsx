@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Particles from "../Particles/Particles";
 import { fadeUp } from "../../utils/animations";
+import CountUp from "../CountUp/CountUp";
 
 interface CaseStudy {
   company: string;
@@ -8,6 +9,15 @@ interface CaseStudy {
   title: string;
   result: string;
 }
+
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
 
 const caseStudies: CaseStudy[] = [
 {
@@ -80,17 +90,19 @@ return ( <section
           whileHover={{
             y: -10,
             scale: 1.02,
+            transition: { duration: 0.2, ease: "easeOut" },
           }}
-          className="group bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition-all duration-300"
+          className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
         >
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-white text-2xl font-bold">
               {study.company}
             </h3>
 
-            <span className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              {study.metric}
-            </span>
+            <CountUp
+              value={study.metric}
+              className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+            />
           </div>
 
           <h4 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-400 transition">
@@ -114,7 +126,7 @@ return ( <section
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="mt-20 rounded-3xl border border-white/10 bg-gradient-to-r from-blue-900/20 via-slate-900 to-cyan-900/20 p-10 text-center"
+      className="mt-20 bvm-banner-card p-10 text-center"
     >
       <h3 className="text-3xl font-bold text-white mb-4">
         Results That Matter
@@ -127,17 +139,17 @@ return ( <section
 
       <div className="flex flex-wrap justify-center gap-8 text-center">
         <div>
-          <h4 className="text-3xl font-bold text-blue-400">100+</h4>
+          <h4 className="text-3xl font-bold text-blue-400"><CountUp value="100+" /></h4>
           <p className="text-slate-400 text-sm">Projects Delivered</p>
         </div>
 
         <div>
-          <h4 className="text-3xl font-bold text-cyan-400">95%</h4>
+          <h4 className="text-3xl font-bold text-cyan-400"><CountUp value="95%" /></h4>
           <p className="text-slate-400 text-sm">Client Satisfaction</p>
         </div>
 
         <div>
-          <h4 className="text-3xl font-bold text-purple-400">15+</h4>
+          <h4 className="text-3xl font-bold text-purple-400"><CountUp value="15+" /></h4>
           <p className="text-slate-400 text-sm">Years Experience</p>
         </div>
       </div>

@@ -6,6 +6,7 @@ import {
   Star,
   type LucideIcon,
 } from "lucide-react";
+import CountUp from "../CountUp/CountUp";
 
 interface Stat {
   value: string;
@@ -13,6 +14,15 @@ interface Stat {
   icon: LucideIcon;
   color: string;
 }
+
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
 
 export default function Metrics() {
   const stats: Stat[] = [
@@ -94,16 +104,17 @@ export default function Metrics() {
                 whileHover={{
                   y: -10,
                   scale: 1.03,
+                  transition: { duration: 0.2, ease: "easeOut" },
                 }}
-                className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 text-center hover:border-blue-500 transition-all duration-300"
+                className={`bvm-card ${cardAccents[index % cardAccents.length]} p-8 text-center`}
               >
 
-                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center">
-                  <Icon className={`w-8 h-8 ${stat.color}`} />
+                <div className="bvm-icon-tile mx-auto mb-6">
+                  <Icon className="w-8 h-8" />
                 </div>
 
                 <h3 className={`text-5xl font-bold ${stat.color}`}>
-                  {stat.value}
+                  <CountUp value={stat.value} />
                 </h3>
 
                 <p className="text-slate-400 mt-4">

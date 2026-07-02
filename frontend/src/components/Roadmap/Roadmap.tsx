@@ -6,6 +6,15 @@ interface RoadmapStep {
   description: string;
 }
 
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
+
 const roadmapSteps: RoadmapStep[] = [
 {
 step: "01",
@@ -85,7 +94,7 @@ return ( <section className="relative bg-[#0A0A0A] py-24 overflow-hidden">
             duration: 0.6,
             delay: index * 0.1,
           }}
-          className="flex flex-col md:flex-row items-start gap-6 bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition-all duration-300"
+          className={`group flex flex-col md:flex-row items-start gap-6 bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
         >
           <div className="text-5xl font-bold text-blue-400">
             {item.step}

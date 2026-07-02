@@ -1,10 +1,20 @@
 import { motion } from "framer-motion";
+import CountUp from "../CountUp/CountUp";
 
 interface Testimonial {
   name: string;
   role: string;
   quote: string;
 }
+
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
 
 const testimonials: Testimonial[] = [
 {
@@ -73,8 +83,9 @@ return ( <section
           whileHover={{
             y: -10,
             scale: 1.02,
+            transition: { duration: 0.2, ease: "easeOut" },
           }}
-          className="group bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition-all duration-300"
+          className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
         >
           <div className="text-6xl font-bold text-blue-400 mb-6">
             "
@@ -103,7 +114,7 @@ return ( <section
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="mt-20 rounded-3xl border border-white/10 bg-gradient-to-r from-blue-900/20 via-slate-900 to-cyan-900/20 p-10 text-center"
+      className="mt-20 bvm-banner-card p-10 text-center"
     >
       <h3 className="text-3xl font-bold text-white mb-4">
         Delivering Results Across Industries
@@ -117,17 +128,17 @@ return ( <section
 
       <div className="flex flex-wrap justify-center gap-8">
         <div>
-          <h4 className="text-3xl font-bold text-blue-400">100+</h4>
+          <h4 className="text-3xl font-bold text-blue-400"><CountUp value="100+" /></h4>
           <p className="text-slate-400 text-sm">Projects Delivered</p>
         </div>
 
         <div>
-          <h4 className="text-3xl font-bold text-cyan-400">95%</h4>
+          <h4 className="text-3xl font-bold text-cyan-400"><CountUp value="95%" /></h4>
           <p className="text-slate-400 text-sm">Client Satisfaction</p>
         </div>
 
         <div>
-          <h4 className="text-3xl font-bold text-purple-400">15+</h4>
+          <h4 className="text-3xl font-bold text-purple-400"><CountUp value="15+" /></h4>
           <p className="text-slate-400 text-sm">Years Experience</p>
         </div>
       </div>

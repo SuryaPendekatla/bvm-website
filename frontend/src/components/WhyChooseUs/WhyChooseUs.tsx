@@ -7,6 +7,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
+import CountUp from "../CountUp/CountUp";
 
 interface Feature {
   icon: LucideIcon;
@@ -46,19 +47,23 @@ const features: Feature[] = [
   },
 ];
 
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-violet",
+];
+
 export default function WhyChooseUs() {
   return (
     <section
       id="why-us"
       className="relative bg-[#080808] py-24 overflow-hidden"
     >
-      {/* Background Glow */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Section Heading */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -80,9 +85,7 @@ export default function WhyChooseUs() {
           </p>
         </motion.div>
 
-        {/* Feature Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
           {features.map((item, index) => {
             const Icon = item.icon;
 
@@ -97,22 +100,17 @@ export default function WhyChooseUs() {
                   delay: index * 0.12,
                 }}
                 whileHover={{
-                  y: -12,
-                  scale: 1.03,
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.2, ease: "easeOut" },
                 }}
-                className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-500"
+                className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
               >
-                {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
+                <div className="bvm-icon-tile mb-6">
+                  <Icon className="w-8 h-8" />
                 </div>
 
-                {/* Icon */}
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center mb-6">
-                  <Icon className="w-10 h-10 text-cyan-400" />
-                </div>
-
-                <h3 className="text-white text-xl font-semibold mb-4 group-hover:text-cyan-400 transition">
+                <h3 className="text-white text-xl font-semibold mb-4 group-hover:text-cyan-300 transition">
                   {item.title}
                 </h3>
 
@@ -122,12 +120,9 @@ export default function WhyChooseUs() {
               </motion.div>
             );
           })}
-
         </div>
 
-        {/* Trust Metrics */}
         <div className="grid md:grid-cols-4 gap-6 mt-20 mb-20">
-
           {([
             {
               value: "100+",
@@ -156,10 +151,11 @@ export default function WhyChooseUs() {
                 delay: index * 0.15,
               }}
               whileHover={{
-                y: -8,
-                scale: 1.03,
+                y: -5,
+                scale: 1.02,
+                transition: { duration: 0.2, ease: "easeOut" },
               }}
-              className="group bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-cyan-400 transition-all duration-300"
+              className={`bvm-card ${cardAccents[index % cardAccents.length]} p-6 text-center`}
             >
               <motion.h3
                 initial={{ scale: 0.8 }}
@@ -169,9 +165,9 @@ export default function WhyChooseUs() {
                   duration: 0.5,
                   delay: index * 0.15,
                 }}
-                className="text-cyan-400 text-4xl font-bold mb-2"
+                className="text-cyan-300 text-4xl font-bold mb-2"
               >
-                {stat.value}
+                <CountUp value={stat.value} />
               </motion.h3>
 
               <p className="text-slate-400 text-sm">
@@ -179,16 +175,14 @@ export default function WhyChooseUs() {
               </p>
             </motion.div>
           ))}
-
         </div>
 
-        {/* Trust Banner */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="rounded-3xl border border-white/10 bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-cyan-900/20 p-10 text-center"
+          className="bvm-banner-card p-10 text-center"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
             Trusted Transformation Partner
@@ -200,13 +194,12 @@ export default function WhyChooseUs() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-medium">
-            <span className="text-cyan-400">AI Enablement</span>
-            <span className="text-cyan-400">Cloud Transformation</span>
-            <span className="text-cyan-400">Intelligent Automation</span>
-            <span className="text-cyan-400">Digital Engineering</span>
+            <span className="text-cyan-300">AI Enablement</span>
+            <span className="text-sky-300">Cloud Transformation</span>
+            <span className="text-emerald-300">Intelligent Automation</span>
+            <span className="text-violet-300">Digital Engineering</span>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

@@ -2,6 +2,16 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "../layouts/MainLayout";
 import TechnologyEcosystem from "../components/TechnologyEcosystem/TechnologyEcosystem";
+import CountUp from "../components/CountUp/CountUp";
+
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
 
 export default function Contact() {
   return (
@@ -49,36 +59,36 @@ export default function Contact() {
 
             <div className="grid md:grid-cols-4 gap-6">
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+              <div className={`bvm-card ${cardAccents[0]} p-6 text-center`}>
                 <h3 className="text-cyan-400 text-3xl font-bold">
-                  100+
+                  <CountUp value="100+" />
                 </h3>
                 <p className="text-slate-400">
                   Projects Delivered
                 </p>
               </div>
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+              <div className={`bvm-card ${cardAccents[1]} p-6 text-center`}>
                 <h3 className="text-cyan-400 text-3xl font-bold">
-                  15+
+                  <CountUp value="15+" />
                 </h3>
                 <p className="text-slate-400">
                   Years Experience
                 </p>
               </div>
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+              <div className={`bvm-card ${cardAccents[2]} p-6 text-center`}>
                 <h3 className="text-cyan-400 text-3xl font-bold">
-                  10+
+                  <CountUp value="10+" />
                 </h3>
                 <p className="text-slate-400">
                   Industry Domains
                 </p>
               </div>
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center">
+              <div className={`bvm-card ${cardAccents[3]} p-6 text-center`}>
                 <h3 className="text-cyan-400 text-3xl font-bold">
-                  95%
+                  <CountUp value="95%" />
                 </h3>
                 <p className="text-slate-400">
                   Client Satisfaction
@@ -115,7 +125,7 @@ export default function Contact() {
 
                 <div className="space-y-6">
 
-                  <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                  <div className={`bvm-card ${cardAccents[0]} p-6`}>
                     <h3 className="font-semibold text-white mb-2">
                       📧 Email
                     </h3>
@@ -125,7 +135,7 @@ export default function Contact() {
                     </p>
                   </div>
 
-                  <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                  <div className={`bvm-card ${cardAccents[1]} p-6`}>
                     <h3 className="font-semibold text-white mb-2">
                       📞 Phone
                     </h3>
@@ -135,7 +145,7 @@ export default function Contact() {
                     </p>
                   </div>
 
-                  <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                  <div className={`bvm-card ${cardAccents[2]} p-6`}>
                     <h3 className="font-semibold text-white mb-2">
                       📍 Location
                     </h3>
@@ -147,7 +157,7 @@ export default function Contact() {
 
                 </div>
 
-                <div className="mt-8 p-6 rounded-3xl bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-cyan-900/20 border border-white/10">
+                <div className="mt-8 bvm-banner-card p-6">
 
                   <h3 className="text-xl font-semibold mb-2">
                     Response Time
@@ -166,7 +176,7 @@ export default function Contact() {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8"
+                className={`bvm-card ${cardAccents[3]} p-8`}
               >
 
                 <div className="space-y-5">
@@ -230,7 +240,7 @@ export default function Contact() {
 
             <div className="grid md:grid-cols-3 gap-8">
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8">
+              <div className={`bvm-card ${cardAccents[0]} p-8`}>
                 <h3 className="text-white text-xl font-semibold mb-4">
                   AI-First Expertise
                 </h3>
@@ -241,7 +251,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8">
+              <div className={`bvm-card ${cardAccents[1]} p-8`}>
                 <h3 className="text-white text-xl font-semibold mb-4">
                   Enterprise Delivery
                 </h3>
@@ -252,7 +262,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8">
+              <div className={`bvm-card ${cardAccents[2]} p-8`}>
                 <h3 className="text-white text-xl font-semibold mb-4">
                   Measurable Outcomes
                 </h3>

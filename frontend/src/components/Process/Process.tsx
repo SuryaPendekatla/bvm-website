@@ -6,6 +6,15 @@ interface Step {
   description: string;
 }
 
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
+
 const steps: Step[] = [
   {
     number: "01",
@@ -58,8 +67,8 @@ export default function Process() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -10 }}
-              className="bg-slate-900/60 border border-slate-800 rounded-3xl p-8"
+              whileHover={{ y: -10, transition: { duration: 0.2, ease: "easeOut" } }}
+              className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
             >
               <div className="text-5xl font-bold text-blue-500 mb-6">
                 {step.number}

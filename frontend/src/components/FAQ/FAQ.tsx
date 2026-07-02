@@ -6,6 +6,15 @@ interface FAQItem {
   answer: string;
 }
 
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
+
 const faqs: FAQItem[] = [
   {
     question: "What AI services does BVM provide?",
@@ -76,7 +85,7 @@ export default function FAQ() {
                 duration: 0.5,
                 delay: index * 0.1,
               }}
-              className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl overflow-hidden"
+              className={`bvm-card ${cardAccents[index % cardAccents.length]}`}
             >
               <button
                 onClick={() => toggleFAQ(index)}

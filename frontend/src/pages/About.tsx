@@ -3,6 +3,16 @@ import CTA from "../components/CTA/CTA";
 import TechnologyEcosystem from "../components/TechnologyEcosystem/TechnologyEcosystem";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import CountUp from "../components/CountUp/CountUp";
+
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
 
 const values = [
   {
@@ -90,17 +100,17 @@ export default function About() {
 
           <div className="flex flex-wrap justify-center gap-10 mt-12">
             <div>
-              <h3 className="text-3xl font-bold text-cyan-400">100+</h3>
+              <h3 className="text-3xl font-bold text-cyan-400"><CountUp value="100+" /></h3>
               <p className="text-slate-400 text-sm">Projects Delivered</p>
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold text-cyan-400">15+</h3>
+              <h3 className="text-3xl font-bold text-cyan-400"><CountUp value="15+" /></h3>
               <p className="text-slate-400 text-sm">Years Experience</p>
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold text-cyan-400">95%</h3>
+              <h3 className="text-3xl font-bold text-cyan-400"><CountUp value="95%" /></h3>
               <p className="text-slate-400 text-sm">Client Satisfaction</p>
             </div>
           </div>
@@ -126,7 +136,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8">
+          <div className="bvm-card bvm-card-accent-cyan p-8">
             <h3 className="text-white text-2xl font-semibold mb-4">
               Mission & Vision
             </h3>
@@ -159,7 +169,7 @@ export default function About() {
             {approach.map((item, index) => (
               <div
                 key={index}
-                className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8"
+                className={`bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
               >
                 <h3 className="text-white text-xl font-semibold mb-4">
                   {item.title}
@@ -189,7 +199,7 @@ export default function About() {
             {values.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-500"
+                className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
               >
                 <h3 className="text-white text-xl font-semibold mb-4">
                   {item.title}
@@ -211,10 +221,10 @@ export default function About() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 text-center"
+              className={`bvm-card ${cardAccents[index % cardAccents.length]} p-8 text-center`}
             >
               <h3 className="text-4xl text-cyan-400 font-bold mb-2">
-                {stat.value}
+                <CountUp value={stat.value} />
               </h3>
 
               <p className="text-slate-400">

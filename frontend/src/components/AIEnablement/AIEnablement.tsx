@@ -54,19 +54,25 @@ const aiServices: AIService[] = [
   },
 ];
 
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-pink",
+];
+
 export default function AIEnablement() {
   return (
     <section
       id="ai-enable"
       className="relative bg-[#0A0A0A] py-24 overflow-hidden"
     >
-      {/* Background Glow */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,9 +97,7 @@ export default function AIEnablement() {
           </p>
         </motion.div>
 
-        {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           {aiServices.map((service: AIService, index: number) => {
             const Icon = service.icon;
 
@@ -108,37 +112,34 @@ export default function AIEnablement() {
                   delay: index * 0.1,
                 }}
                 whileHover={{
-                  y: -10,
+                  y: -8,
                   scale: 1.02,
+                  transition: { duration: 0.2, ease: "easeOut" },
                 }}
-                className="group bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:border-blue-500 transition-all duration-300"
+                className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
               >
-
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-white/10 flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-blue-400" />
+                <div className="bvm-icon-tile mb-6">
+                  <Icon className="w-8 h-8" />
                 </div>
 
-                <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-blue-400 transition">
+                <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-cyan-300 transition">
                   {service.title}
                 </h3>
 
                 <p className="text-slate-400 leading-relaxed">
                   {service.description}
                 </p>
-
               </motion.div>
             );
           })}
-
         </div>
 
-        {/* Enterprise Banner */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-20 rounded-3xl border border-white/10 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 p-10 text-center"
+          className="mt-20 bvm-banner-card p-10 text-center"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
             End-to-End AI Transformation
@@ -149,7 +150,6 @@ export default function AIEnablement() {
             solutions, govern responsibly, and drive measurable business outcomes.
           </p>
         </motion.div>
-
       </div>
     </section>
   );

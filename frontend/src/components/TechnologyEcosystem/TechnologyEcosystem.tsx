@@ -14,6 +14,15 @@ interface Technology {
   logo: string;
 }
 
+const cardAccents = [
+  "bvm-card-accent-cyan",
+  "bvm-card-accent-violet",
+  "bvm-card-accent-amber",
+  "bvm-card-accent-emerald",
+  "bvm-card-accent-sky",
+  "bvm-card-accent-pink",
+];
+
 const technologies: Technology[] = [
   {
     name: "Microsoft Azure",
@@ -93,14 +102,10 @@ export default function TechnologyEcosystem() {
               whileHover={{
                 y: -10,
                 scale: 1.03,
+                transition: { duration: 0.2, ease: "easeOut" },
               }}
-              className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden hover:border-cyan-400 transition-all duration-500"
+              className={`group bvm-card ${cardAccents[index % cardAccents.length]} p-8`}
             >
-
-              {/* Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 blur-[80px]" />
-              </div>
 
               {/* Logo */}
               <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center p-4 mx-auto mb-6 shadow-lg">
@@ -126,7 +131,7 @@ export default function TechnologyEcosystem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-20 rounded-3xl border border-white/10 bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-cyan-900/20 p-10 text-center"
+          className="mt-20 bvm-banner-card p-10 text-center"
         >
 
           <h3 className="text-3xl font-bold text-white mb-4">
