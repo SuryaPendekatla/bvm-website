@@ -23,7 +23,7 @@ const companies: Company[] = [
 export default function TrustedBy() {
   return (
     <section className="bg-[#050505] py-16 border-y border-white/10">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12">
           <p className="text-slate-400 uppercase tracking-widest">

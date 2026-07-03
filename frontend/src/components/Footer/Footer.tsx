@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 blur-[150px]" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 blur-[150px]" />
 
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 relative z-10">
 
         {/* Main Footer Grid */}
         <div className="grid md:grid-cols-4 gap-12">
@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Company */}
           <div>
 
-            <div className="flex items-center gap-3 mb-4">
+            <div className="h-11 flex items-center gap-3 mb-5">
 
                <img
                 src={bvmlogo}
@@ -30,7 +30,7 @@ export default function Footer() {
               />
 
               <div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white leading-tight">
                   BVM
                 </h3>
 
@@ -52,23 +52,32 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition font-semibold"
+                aria-label="LinkedIn"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:-translate-y-0.5 transition-all"
               >
-                in
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
               </a>
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition font-semibold"
+                aria-label="X (Twitter)"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:-translate-y-0.5 transition-all"
               >
-                X
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 transition font-semibold"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:-translate-y-0.5 transition-all"
               >
-                f
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 8.72 8.72 0 0 0-.629-.017h-.001c-.658 0-1.183.083-1.598.283-.416.199-.677.475-.845.849-.169.372-.226.842-.226 1.457v1.399h3.667l-.443 3.667h-3.224v7.98H9.101z" />
+                </svg>
               </a>
 
             </div>
@@ -78,9 +87,11 @@ export default function Footer() {
           {/* Services */}
           <div>
 
-            <h4 className="text-white font-semibold mb-5">
-              Services
-            </h4>
+            <div className="h-11 flex items-center mb-5">
+              <h4 className="text-white font-semibold">
+                Services
+              </h4>
+            </div>
 
             <ul className="space-y-3 text-slate-400">
 
@@ -127,9 +138,11 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
 
-            <h4 className="text-white font-semibold mb-5">
-              Quick Links
-            </h4>
+            <div className="h-11 flex items-center mb-5">
+              <h4 className="text-white font-semibold">
+                Quick Links
+              </h4>
+            </div>
 
             <ul className="space-y-3 text-slate-400">
 
@@ -170,22 +183,17 @@ export default function Footer() {
           {/* Contact */}
           <div>
 
-            <h4 className="text-white font-semibold mb-5">
-              Contact
-            </h4>
+            <div className="h-11 flex items-center mb-5">
+              <h4 className="text-white font-semibold">
+                Contact
+              </h4>
+            </div>
 
             <ul className="space-y-3 text-slate-400">
               <li>hello@bvmcs.com</li>
               <li>+91 XXXXX XXXXX</li>
               <li>India</li>
             </ul>
-
-            <Link
-              to="/contact"
-              className="inline-block mt-6 bg-gradient-to-r from-cyan-500 to-purple-500 px-5 py-3 rounded-xl text-white font-medium hover:scale-105 transition"
-            >
-              Book a Call
-            </Link>
 
           </div>
 
@@ -224,7 +232,7 @@ export default function Footer() {
         >
 
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} BVMCS. All rights reserved.
+            © {new Date().getFullYear()} BVM. All rights reserved.
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0 text-slate-500 text-sm">

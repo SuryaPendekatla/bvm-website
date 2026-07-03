@@ -72,7 +72,7 @@ export default function AIEnablement() {
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

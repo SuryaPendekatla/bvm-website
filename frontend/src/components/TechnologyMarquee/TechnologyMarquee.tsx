@@ -36,7 +36,7 @@ export default function TechnologyMarquee() {
       {/* Top Accent */}
       <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
         {/* Section Header */}
 
@@ -81,71 +81,58 @@ export default function TechnologyMarquee() {
 
         <div className="relative overflow-hidden">
 
-                    <motion.div
-            animate={{
-              x: ["0%", "-50%"],
-            }}
-            transition={{
-              duration: 35,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="flex w-max gap-8 py-4"
-          >
+          <div className="bvm-marquee-track flex w-max gap-4 py-4">
             {[...technologies, ...technologies].map((tech, index) => (
               <motion.div
                 key={index}
                 whileHover={{
-                  y: -10,
-                  scale: 1.04,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 18,
+                  y: -6,
+                  scale: 1.03,
+                  transition: { duration: 0.2, ease: "easeOut" },
                 }}
                 className="
                   group
                   relative
                   flex
-                  min-w-[280px]
+                  min-w-[200px]
+                  sm:min-w-[216px]
                   items-center
-                  gap-5
+                  gap-4
                   overflow-hidden
-                  rounded-3xl
+                  rounded-2xl
                   border
                   border-white/10
                   bg-gradient-to-br
                   from-white/[0.05]
                   to-white/[0.02]
-                  px-8
-                  py-6
+                  px-5
+                  py-4
                   backdrop-blur-2xl
                   transition-all
                   duration-500
                   hover:border-cyan-400/40
-                  hover:shadow-[0_0_45px_rgba(34,211,238,0.18)]
+                  hover:shadow-[0_0_35px_rgba(34,211,238,0.16)]
                 "
               >
 
                 {/* Hover Glow */}
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <div className="absolute -left-10 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
-                  <div className="absolute -right-10 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-purple-500/10 blur-3xl" />
+                  <div className="absolute -left-6 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-2xl" />
+                  <div className="absolute -right-6 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-purple-500/10 blur-2xl" />
                 </div>
 
                 {/* Logo */}
-                <div className="relative flex h-14 w-20 items-center justify-center">
+                <div className="relative flex h-10 w-14 items-center justify-center">
 
-                  <div className="absolute h-14 w-14 rounded-full bg-cyan-500/10 blur-xl opacity-0 transition-all duration-500 group-hover:opacity-100" />
+                  <div className="absolute h-10 w-10 rounded-full bg-cyan-500/10 blur-lg opacity-0 transition-all duration-500 group-hover:opacity-100" />
 
                   <img
                     src={tech.logo}
                     alt={tech.name}
                     className="
                       relative
-                      max-h-10
-                      max-w-[90px]
+                      max-h-7
+                      max-w-[64px]
                       object-contain
                       opacity-75
                       grayscale
@@ -160,12 +147,12 @@ export default function TechnologyMarquee() {
                 </div>
 
                 {/* Divider */}
-                <div className="h-10 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                <div className="h-8 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
 
                 {/* Name */}
                 <div className="flex flex-col">
 
-                  <span className="text-lg font-semibold tracking-wide text-white">
+                  <span className="text-sm font-semibold tracking-wide text-white">
                     {tech.name}
                   </span>
 
@@ -173,12 +160,12 @@ export default function TechnologyMarquee() {
 
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Fade Edges */}
-          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-40 bg-gradient-to-r from-[#080808] to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-28 bg-gradient-to-r from-[#080808] to-transparent" />
 
-          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-40 bg-gradient-to-l from-[#080808] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-28 bg-gradient-to-l from-[#080808] to-transparent" />
 
         </div>
 

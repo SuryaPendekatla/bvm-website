@@ -158,6 +158,25 @@ a {
   color: var(--card-accent-a);
 }
 
+/* Smooth GPU-accelerated infinite marquee, pausable on hover */
+@keyframes bvm-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.bvm-marquee-track {
+  animation: bvm-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.bvm-marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* Large banner cards / CTA cards */
 .bvm-banner-card {
   border: 1px solid transparent;

@@ -83,7 +83,7 @@ export default function About() {
         <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[140px] rounded-full" />
 
-        <div className="max-w-5xl mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <p className="text-cyan-400 uppercase tracking-widest mb-4">
             About BVMCS
           </p>
@@ -119,7 +119,7 @@ export default function About() {
 
       {/* Who We Are */}
       <section className="py-24 bg-[#050505]">
-        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
 
           <div>
             <h2 className="text-4xl text-white font-bold mb-6">
@@ -153,7 +153,7 @@ export default function About() {
 
       {/* Our Approach */}
       <section className="py-24 bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16">
             <p className="text-cyan-400 uppercase tracking-widest mb-3">
@@ -187,7 +187,7 @@ export default function About() {
 
       {/* Values */}
       <section className="py-24 bg-[#050505]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white">
@@ -217,7 +217,7 @@ export default function About() {
 
       {/* Stats */}
       <section className="py-24 bg-[#080808]">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}

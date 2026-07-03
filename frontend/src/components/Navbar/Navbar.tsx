@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
+import InteractiveHoverButton from "../InteractiveHoverButton/InteractiveHoverButton";
 
 interface NavLink {
   name: string;
@@ -39,11 +40,11 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/70 backdrop-blur-2xl border-b border-white/10"
+          ? "bg-[#050505]/80 backdrop-blur-2xl border-b border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/">
@@ -94,38 +95,18 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
 
           {/* Desktop CTA */}
-          <Link to="/contact" className="hidden md:block">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: [
-                  "0 0 15px rgba(34,211,238,.15)",
-                  "0 0 35px rgba(34,211,238,.4)",
-                  "0 0 15px rgba(34,211,238,.15)",
-                ],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 px-5 py-3 rounded-xl font-medium text-white"
-            >
+          <div className="hidden md:block">
+            <InteractiveHoverButton to="/contact" className="px-5 py-3 text-sm font-medium">
               Book a Call
-            </motion.button>
-          </Link>
-
-          {/* Mobile CTA */}
-          <Link to="/contact" className="md:hidden">
-            <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-3 py-2 text-xs rounded-xl font-medium text-white">
-              Book a Call
-            </button>
-          </Link>
+            </InteractiveHoverButton>
+          </div>
 
           {/* Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-1"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            className="md:hidden flex flex-col gap-1 p-2 -mr-2"
           >
             <span
               className={`w-6 h-0.5 bg-white transition ${
@@ -168,16 +149,16 @@ export default function Navbar() {
             transition={{
               duration: 0.3,
             }}
-            className="md:hidden overflow-hidden bg-black/95 backdrop-blur-2xl border-t border-white/10"
+            className="md:hidden overflow-hidden bg-[#080808]/98 backdrop-blur-2xl border-t border-white/10 rounded-b-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
           >
-            <div className="px-6 py-6 flex flex-col gap-5">
+            <div className="px-6 py-6 flex flex-col divide-y divide-white/5">
 
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`text-lg transition ${
+                  className={`py-3.5 text-lg transition ${
                     location.pathname === link.path
                       ? "text-cyan-400"
                       : "text-slate-300 hover:text-white"
@@ -190,8 +171,9 @@ export default function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setMenuOpen(false)}
+                className="pt-5"
               >
-                <button className="w-full mt-3 bg-gradient-to-r from-cyan-500 to-purple-500 py-3 rounded-xl font-medium text-white">
+                <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 py-3.5 rounded-xl font-medium text-white">
                   Book a Call
                 </button>
               </Link>

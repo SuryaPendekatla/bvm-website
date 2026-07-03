@@ -79,7 +79,7 @@ export default function Industries() {
         <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[140px] rounded-full" />
 
-        <div className="max-w-5xl mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
 
           <p className="text-cyan-400 uppercase tracking-widest mb-4">
             Industries
@@ -102,7 +102,7 @@ export default function Industries() {
       {/* Industries Grid */}
       <section className="pb-24 bg-[#050505]">
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -140,7 +140,7 @@ export default function Industries() {
       {/* AI Use Cases */}
       <section className="py-24 bg-[#080808]">
 
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16">
 
@@ -198,7 +198,7 @@ export default function Industries() {
       {/* Outcomes */}
       <section className="py-24 bg-[#050505]">
 
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16">
 
@@ -241,7 +241,7 @@ export default function Industries() {
       {/* CTA */}
       <section className="pb-24 bg-[#050505]">
 
-        <div className="text-center max-w-4xl mx-auto px-6">
+        <div className="text-center max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Looking For Industry-Specific AI Solutions?

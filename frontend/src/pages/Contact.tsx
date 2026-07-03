@@ -32,7 +32,7 @@ export default function Contact() {
 
         {/* Hero */}
         <section className="pt-40 pb-20 text-center relative z-10">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
 
             <p className="text-cyan-400 uppercase tracking-widest mb-4">
               Contact Us
@@ -55,7 +55,7 @@ export default function Contact() {
 
         {/* Trust Metrics */}
         <section className="pb-20 relative z-10">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
             <div className="grid md:grid-cols-4 gap-6">
 
@@ -102,7 +102,7 @@ export default function Contact() {
 
         {/* Contact Section */}
         <section className="pb-24 relative z-10">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
             <div className="grid lg:grid-cols-2 gap-12">
 
@@ -228,7 +228,7 @@ export default function Contact() {
         {/* Why Work With BVM */}
         <section className="py-24 bg-[#080808]">
 
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
             <div className="text-center mb-16">
 

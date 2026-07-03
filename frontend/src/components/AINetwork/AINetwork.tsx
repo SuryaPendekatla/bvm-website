@@ -103,6 +103,7 @@ export default function AINetwork() {
               key={`packet-${index}`}
               r="0.35"
               fill={index % 2 === 0 ? "#22d3ee" : "#a855f7"}
+              initial={{ cx: 50, cy: 50 }}
               animate={{
                 cx: [50, node.x],
                 cy: [50, node.y],

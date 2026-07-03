@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import AINetwork from "../AINetwork/AINetwork";
 import Particles from "../Particles/Particles";
+import InteractiveHoverButton from "../InteractiveHoverButton/InteractiveHoverButton";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[95vh] bg-gradient-to-b from-black via-[#050505] to-black text-white pt-24 md:pt-32 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-[760px] bg-[#050505] text-white pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
       <Particles />
+
       {/* AI Grid Background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -15,34 +17,7 @@ export default function Hero() {
       <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px]" />
 
-      {/* Floating Orbs */}
-      <motion.div
-        animate={{
-          y: [0, -40, 0],
-          x: [0, 20, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-40 right-40 w-40 h-40 rounded-full bg-cyan-500/20 blur-[80px]"
-      />
-
-      <motion.div
-        animate={{
-          y: [0, 30, 0],
-          x: [0, -20, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-40 left-40 w-32 h-32 rounded-full bg-purple-500/20 blur-[70px]"
-      />
-
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6 grid xl:grid-cols-2 gap-20 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 grid lg:grid-cols-[1.02fr_0.98fr] gap-12 lg:gap-16 items-center relative z-10">
 
         {/* Left Content */}
         <motion.div
@@ -54,7 +29,7 @@ export default function Hero() {
             AI-FIRST. HUMAN-LED.
           </p>
 
-          <h1 className="text-[42px] sm:text-[54px] lg:text-[66px] xl:text-[78px] font-bold leading-[0.95] tracking-[-0.04em]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.02] tracking-[-0.03em]">
             Accelerate Enterprise Growth
             <br />
 
@@ -67,21 +42,21 @@ export default function Hero() {
             Digital Transformation
           </h1>
 
-          <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-slate-300/90">
+          <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-slate-300/90">
             BVM helps organizations unlock measurable business value through
             AI Enablement, Intelligent Automation, Cloud Transformation,
             Digital Engineering, and Strategic Talent Solutions.
           </p>
 
           <motion.div
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-8 flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg shadow-blue-500/20">
+            <InteractiveHoverButton>
               Book a Strategy Call
-            </button>
+            </InteractiveHoverButton>
 
             <button className="border border-white/20 hover:border-cyan-400 hover:bg-white/5 transition-all duration-300 px-8 py-4 rounded-xl">
               Explore AI Services

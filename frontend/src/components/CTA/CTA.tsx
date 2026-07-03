@@ -6,7 +6,7 @@ export default function CTA() {
       id="contact"
       className="py-24 bg-[#050505]"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         <motion.div
           whileHover={{ scale: 1.01 }}
