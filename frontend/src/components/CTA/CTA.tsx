@@ -28,7 +28,7 @@ export default function CTA() {
             </h2>
 
             <p className="text-slate-300 max-w-3xl mx-auto mb-10 text-lg">
-              Partner with BVMCS to unlock innovation, efficiency,
+              Partner with BVM to unlock innovation, efficiency,
               intelligent automation, and measurable business growth
               through AI enablement and digital transformation.
             </p>

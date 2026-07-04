@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import AINetwork from "../AINetwork/AINetwork";
+import HeroGlobe from "../HeroGlobe/HeroGlobe";
 import Particles from "../Particles/Particles";
 import InteractiveHoverButton from "../InteractiveHoverButton/InteractiveHoverButton";
 
@@ -71,7 +71,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          <AINetwork />
+          <HeroGlobe />
         </motion.div>
 
       </div>

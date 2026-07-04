@@ -71,10 +71,10 @@ export default function About() {
   return (
     <MainLayout>
       <Helmet>
-        <title>About BVMCS | AI Transformation Experts</title>
+        <title>About BVM | AI Transformation Experts</title>
         <meta
           name="description"
-          content="Learn how BVMCS helps enterprises accelerate growth through AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering."
+          content="Learn how BVM helps enterprises accelerate growth through AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering."
         />
       </Helmet>
 
@@ -85,7 +85,7 @@ export default function About() {
 
         <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <p className="text-cyan-400 uppercase tracking-widest mb-4">
-            About BVMCS
+            About BVM
           </p>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -127,7 +127,7 @@ export default function About() {
             </h2>
 
             <p className="text-slate-400 text-lg leading-relaxed">
-              BVMCS is an AI-first digital transformation partner helping
+              BVM is an AI-first digital transformation partner helping
               enterprises modernize operations, unlock new revenue
               opportunities, and accelerate innovation through intelligent
               technologies. We combine strategy, engineering excellence,
@@ -246,7 +246,7 @@ export default function About() {
           </h2>
 
           <p className="text-slate-400 max-w-2xl mx-auto mb-8">
-            Discover how BVMCS helps enterprises accelerate innovation
+            Discover how BVM helps enterprises accelerate innovation
             through AI Enablement, Intelligent Automation, Generative AI,
             and Digital Transformation solutions.
           </p>

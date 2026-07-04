@@ -66,10 +66,10 @@ export default function ServicesPage() {
   return (
     <MainLayout>
       <Helmet>
-        <title>Services | BVMCS AI & Digital Transformation</title>
+        <title>Services | BVM AI & Digital Transformation</title>
         <meta
           name="description"
-          content="Explore BVMCS services including AI Enablement, Generative AI, AI Agents, Cloud Transformation, and Digital Engineering."
+          content="Explore BVM services including AI Enablement, Generative AI, AI Agents, Cloud Transformation, and Digital Engineering."
         />
       </Helmet>
 

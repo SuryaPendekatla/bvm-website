@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
 name: "Sarah Johnson",
 role: "CIO, GlobalBank",
 quote:
-"BVMCS helped us accelerate our AI transformation roadmap and deliver measurable business outcomes.",
+"BVM helped us accelerate our AI transformation roadmap and deliver measurable business outcomes.",
 },
 {
 name: "Michael Chen",

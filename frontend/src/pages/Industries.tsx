@@ -66,7 +66,7 @@ export default function Industries() {
   return (
     <MainLayout>
       <Helmet>
-        <title>Industries | BVMCS AI Solutions</title>
+        <title>Industries | BVM AI Solutions</title>
         <meta
           name="description"
           content="Industry-specific AI solutions for Banking, Healthcare, Manufacturing, Retail, Technology, and Education."
@@ -90,7 +90,7 @@ export default function Industries() {
           </h1>
 
           <p className="text-slate-400 text-xl max-w-3xl mx-auto">
-            BVMCS delivers industry-specific AI solutions that help
+            BVM delivers industry-specific AI solutions that help
             organizations improve operational efficiency, customer
             experience, decision-making, and business performance.
           </p>

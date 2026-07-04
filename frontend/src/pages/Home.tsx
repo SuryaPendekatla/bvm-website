@@ -20,11 +20,11 @@ export default function Home() {
   return (
     <MainLayout>
       <Helmet>
-        <title>BVMCS | AI Enablement & Digital Transformation</title>
+        <title>BVM | AI Enablement & Digital Transformation</title>
 
         <meta
           name="description"
-          content="BVMCS helps enterprises accelerate growth through AI Enablement, Intelligent Automation, Cloud Transformation, Digital Engineering, and Generative AI Solutions."
+          content="BVM helps enterprises accelerate growth through AI Enablement, Intelligent Automation, Cloud Transformation, Digital Engineering, and Generative AI Solutions."
         />
       </Helmet>
 

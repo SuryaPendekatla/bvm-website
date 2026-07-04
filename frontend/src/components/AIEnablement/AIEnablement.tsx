@@ -93,7 +93,7 @@ export default function AIEnablement() {
 
           <p className="text-slate-400 max-w-3xl mx-auto text-lg">
             From strategy and governance to implementation and adoption,
-            BVMCS enables organizations to scale AI with confidence.
+            BVM enables organizations to scale AI with confidence.
           </p>
         </motion.div>
 
