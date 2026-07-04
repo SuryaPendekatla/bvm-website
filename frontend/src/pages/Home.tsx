@@ -26,6 +26,23 @@ export default function Home() {
           name="description"
           content="BVM helps enterprises accelerate growth through AI Enablement, Intelligent Automation, Cloud Transformation, Digital Engineering, and Generative AI Solutions."
         />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bvmcs.com/" />
+        <meta property="og:title" content="BVM | AI Enablement & Digital Transformation" />
+        <meta
+          property="og:description"
+          content="BVM helps enterprises accelerate growth through AI Enablement, Intelligent Automation, Cloud Transformation, Digital Engineering, and Generative AI Solutions."
+        />
+        <meta property="og:image" content="https://bvmcs.com/bvm-logo.svg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="BVM | AI Enablement & Digital Transformation" />
+        <meta
+          name="twitter:description"
+          content="BVM helps enterprises accelerate growth through AI Enablement, Intelligent Automation, Cloud Transformation, Digital Engineering, and Generative AI Solutions."
+        />
+        <meta name="twitter:image" content="https://bvmcs.com/bvm-logo.svg" />
       </Helmet>
 
       <Hero />

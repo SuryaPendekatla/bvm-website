@@ -7,17 +7,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
-import CountUp from "../CountUp/CountUp";
 
 interface Feature {
   icon: LucideIcon;
   title: string;
   description: string;
-}
-
-interface Stat {
-  value: string;
-  label: string;
 }
 
 const features: Feature[] = [
@@ -58,7 +52,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-us"
-      className="relative bg-[#080808] py-24 overflow-hidden"
+      className="relative bg-[#071022] py-24 overflow-hidden"
     >
       <div className="absolute top-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-[120px]" />
@@ -120,61 +114,6 @@ export default function WhyChooseUs() {
               </motion.div>
             );
           })}
-        </div>
-
-        <div className="grid md:grid-cols-4 gap-6 mt-20 mb-20">
-          {([
-            {
-              value: "100+",
-              label: "Projects Delivered",
-            },
-            {
-              value: "15+",
-              label: "Years Experience",
-            },
-            {
-              value: "10+",
-              label: "Industry Domains",
-            },
-            {
-              value: "95%",
-              label: "Client Satisfaction",
-            },
-          ] as Stat[]).map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-              }}
-              whileHover={{
-                y: -5,
-                scale: 1.02,
-                transition: { duration: 0.2, ease: "easeOut" },
-              }}
-              className={`bvm-card ${cardAccents[index % cardAccents.length]} p-6 text-center`}
-            >
-              <motion.h3
-                initial={{ scale: 0.8 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.15,
-                }}
-                className="text-cyan-300 text-4xl font-bold mb-2"
-              >
-                <CountUp value={stat.value} />
-              </motion.h3>
-
-              <p className="text-slate-400 text-sm">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
         </div>
 
         <motion.div

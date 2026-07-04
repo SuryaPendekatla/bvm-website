@@ -44,7 +44,7 @@ const steps: Step[] = [
 
 export default function Process() {
   return (
-    <section className="bg-[#050505] py-24">
+    <section className="bg-[#050B18] py-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">

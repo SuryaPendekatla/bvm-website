@@ -46,7 +46,7 @@ result:
 export default function CaseStudies() {
 return ( <section
    id="case-studies"
-   className="relative bg-[#0A0A0A] py-24 overflow-hidden"
+   className="relative bg-[#0A1428] py-24 overflow-hidden"
  >
 {/* Background Glow */} <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" /> <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
 
@@ -112,10 +112,6 @@ return ( <section
           <p className="text-slate-400 leading-relaxed">
             {study.result}
           </p>
-
-          <button className="mt-8 text-blue-400 hover:text-cyan-300 transition font-medium">
-            View Case Study →
-          </button>
         </motion.div>
       ))}
     </div>
@@ -132,27 +128,10 @@ return ( <section
         Results That Matter
       </h3>
 
-      <p className="text-slate-400 max-w-3xl mx-auto mb-8">
+      <p className="text-slate-400 max-w-3xl mx-auto">
         Every engagement is focused on delivering measurable business value,
         operational efficiency, customer satisfaction, and sustainable growth.
       </p>
-
-      <div className="flex flex-wrap justify-center gap-8 text-center">
-        <div>
-          <h4 className="text-3xl font-bold text-blue-400"><CountUp value="100+" /></h4>
-          <p className="text-slate-400 text-sm">Projects Delivered</p>
-        </div>
-
-        <div>
-          <h4 className="text-3xl font-bold text-cyan-400"><CountUp value="95%" /></h4>
-          <p className="text-slate-400 text-sm">Client Satisfaction</p>
-        </div>
-
-        <div>
-          <h4 className="text-3xl font-bold text-purple-400"><CountUp value="15+" /></h4>
-          <p className="text-slate-400 text-sm">Years Experience</p>
-        </div>
-      </div>
     </motion.div>
 
   </div>

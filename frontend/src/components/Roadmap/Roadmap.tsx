@@ -61,7 +61,7 @@ description:
 ];
 
 export default function Roadmap() {
-return ( <section className="relative bg-[#0A0A0A] py-24 overflow-hidden">
+return ( <section className="relative bg-[#0A1428] py-24 overflow-hidden">
 
   <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" />
   <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />

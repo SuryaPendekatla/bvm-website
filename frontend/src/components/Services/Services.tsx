@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Brain,
   Sparkles,
@@ -74,7 +75,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative bg-[#080808] py-24 overflow-hidden"
+      className="relative bg-[#071022] py-24 overflow-hidden"
     >
       <div className="absolute top-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-[120px]" />
@@ -136,9 +137,12 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                <button className="mt-8 text-cyan-300 hover:text-white transition font-medium">
+                <Link
+                  to="/services"
+                  className="mt-8 inline-block text-cyan-300 hover:text-white transition font-medium"
+                >
                   Learn More →
-                </button>
+                </Link>
               </motion.div>
             );
           })}
@@ -199,7 +203,7 @@ export default function Services() {
           </p>
 
           <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition duration-300">
-            Talk to an Expert
+            Book a Strategy Call
           </button>
         </motion.div>
       </div>

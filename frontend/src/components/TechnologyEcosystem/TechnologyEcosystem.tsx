@@ -60,7 +60,7 @@ const technologies: Technology[] = [
 
 export default function TechnologyEcosystem() {
   return (
-    <section className="relative bg-[#080808] py-24 overflow-hidden">
+    <section className="relative bg-[#071022] py-24 overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />

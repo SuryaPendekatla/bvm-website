@@ -4,7 +4,7 @@ import bvmlogo from "../../assets/logos/bvm-logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#080808] overflow-hidden">
+    <footer className="relative bg-[#071022] overflow-hidden">
 
       {/* Top Gradient Line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
@@ -192,7 +192,9 @@ export default function Footer() {
             <ul className="space-y-3 text-slate-400">
               <li>hello@bvmcs.com</li>
               <li>+91 XXXXX XXXXX</li>
-              <li>India</li>
+              <li>Hyderabad, IN (HQ)</li>
+              <li>Hounslow, UK</li>
+              <li>Deerfield, IL, US</li>
             </ul>
 
           </div>
@@ -218,7 +220,7 @@ export default function Footer() {
             to="/contact"
             className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition"
           >
-            Book a Call
+            Book a Strategy Call
           </Link>
 
         </div>

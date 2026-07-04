@@ -5,7 +5,7 @@ import InteractiveHoverButton from "../InteractiveHoverButton/InteractiveHoverBu
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-[760px] bg-[#050505] text-white pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-[760px] bg-[#050B18] text-white pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
       <Particles />
 
       {/* AI Grid Background */}
@@ -54,13 +54,13 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <InteractiveHoverButton>
+            <InteractiveHoverButton to="/contact">
               Book a Strategy Call
             </InteractiveHoverButton>
 
-            <button className="border border-white/20 hover:border-cyan-400 hover:bg-white/5 transition-all duration-300 px-8 py-4 rounded-xl">
-              Explore AI Services
-            </button>
+            <InteractiveHoverButton to="/services">
+              Explore Services
+            </InteractiveHoverButton>
           </motion.div>
         </motion.div>
 

@@ -22,9 +22,26 @@ export default function Contact() {
           name="description"
           content="Connect with BVM to explore AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering solutions."
         />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bvmcs.com/contact" />
+        <meta property="og:title" content="Contact BVM | AI Transformation Experts" />
+        <meta
+          property="og:description"
+          content="Connect with BVM to explore AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering solutions."
+        />
+        <meta property="og:image" content="https://bvmcs.com/bvm-logo.svg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact BVM | AI Transformation Experts" />
+        <meta
+          name="twitter:description"
+          content="Connect with BVM to explore AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering solutions."
+        />
+        <meta name="twitter:image" content="https://bvmcs.com/bvm-logo.svg" />
       </Helmet>
 
-      <main className="bg-[#050505] text-white min-h-screen overflow-hidden">
+      <main className="bg-[#050B18] text-white min-h-screen overflow-hidden">
 
         {/* Background Glow */}
         <div className="fixed top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full" />
@@ -146,13 +163,57 @@ export default function Contact() {
                   </div>
 
                   <div className={`bvm-card ${cardAccents[2]} p-6`}>
-                    <h3 className="font-semibold text-white mb-2">
-                      📍 Location
+                    <h3 className="font-semibold text-white mb-4">
+                      📍 Locations
                     </h3>
 
-                    <p className="text-slate-400">
-                      India
-                    </p>
+                    <div className="space-y-5">
+                      <div>
+                        <span className="inline-block text-[11px] font-semibold uppercase tracking-wide text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 rounded-full px-2.5 py-0.5 mb-1.5">
+                          Primary
+                        </span>
+                        <p className="text-slate-400">
+                          Hyderabad, Telangana 500076, IN
+                        </p>
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=Hyderabad%2C+Telangana+500076%2C+India"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 transition text-sm font-medium"
+                        >
+                          Get directions ↗
+                        </a>
+                      </div>
+
+                      <div>
+                        <p className="text-slate-400">
+                          Office No B604, Vista Centre, 50 Salisbury Road,
+                          Hounslow, United Kingdom TW3 1NQ, GB
+                        </p>
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=Office+No+B604%2C+Vista+Centre%2C+50+Salisbury+Road%2C+Hounslow%2C+United+Kingdom+TW3+1NQ"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 transition text-sm font-medium"
+                        >
+                          Get directions ↗
+                        </a>
+                      </div>
+
+                      <div>
+                        <p className="text-slate-400">
+                          620 Inverrary Ln, Deerfield, IL 60015, US
+                        </p>
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=620+Inverrary+Ln%2C+Deerfield%2C+IL+60015%2C+US"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 transition text-sm font-medium"
+                        >
+                          Get directions ↗
+                        </a>
+                      </div>
+                    </div>
                   </div>
 
                 </div>
@@ -209,7 +270,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 py-4 rounded-xl font-semibold hover:scale-[1.02] transition"
                   >
-                    Book a Call
+                    Book a Strategy Call
                   </button>
 
                   <p className="text-center text-slate-500 text-sm">
@@ -226,7 +287,7 @@ export default function Contact() {
         </section>
 
         {/* Why Work With BVM */}
-        <section className="py-24 bg-[#080808]">
+        <section className="py-24 bg-[#071022]">
 
           <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 

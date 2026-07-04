@@ -40,7 +40,7 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050505]/80 backdrop-blur-2xl border-b border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          ? "bg-[#050B18]/80 backdrop-blur-2xl border-b border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
           : "bg-transparent"
       }`}
     >
@@ -97,7 +97,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <InteractiveHoverButton to="/contact" className="px-5 py-3 text-sm font-medium">
-              Book a Call
+              Book a Strategy Call
             </InteractiveHoverButton>
           </div>
 
@@ -149,7 +149,7 @@ export default function Navbar() {
             transition={{
               duration: 0.3,
             }}
-            className="md:hidden overflow-hidden bg-[#080808]/98 backdrop-blur-2xl border-t border-white/10 rounded-b-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            className="md:hidden overflow-hidden bg-[#071022]/98 backdrop-blur-2xl border-t border-white/10 rounded-b-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
           >
             <div className="px-6 py-6 flex flex-col divide-y divide-white/5">
 
@@ -174,7 +174,7 @@ export default function Navbar() {
                 className="pt-5"
               >
                 <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 py-3.5 rounded-xl font-medium text-white">
-                  Book a Call
+                  Book a Strategy Call
                 </button>
               </Link>
 

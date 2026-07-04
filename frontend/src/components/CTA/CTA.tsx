@@ -4,7 +4,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="py-24 bg-[#050505]"
+      className="py-24 bg-[#050B18]"
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
@@ -35,7 +35,7 @@ export default function CTA() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <button className="bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition-all duration-300 shadow-lg shadow-blue-500/20">
-                Schedule a Consultation
+                Book a Strategy Call
               </button>
 
               <button className="border border-white/20 px-8 py-4 rounded-xl text-white hover:border-cyan-400 hover:bg-white/5 transition-all duration-300">

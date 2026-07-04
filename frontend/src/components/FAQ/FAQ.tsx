@@ -51,7 +51,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-[#050505] py-24">
+    <section className="bg-[#050B18] py-24">
       <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
 
         <motion.div

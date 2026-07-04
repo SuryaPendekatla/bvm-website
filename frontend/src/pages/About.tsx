@@ -76,10 +76,27 @@ export default function About() {
           name="description"
           content="Learn how BVM helps enterprises accelerate growth through AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering."
         />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bvmcs.com/about" />
+        <meta property="og:title" content="About BVM | AI Transformation Experts" />
+        <meta
+          property="og:description"
+          content="Learn how BVM helps enterprises accelerate growth through AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering."
+        />
+        <meta property="og:image" content="https://bvmcs.com/bvm-logo.svg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About BVM | AI Transformation Experts" />
+        <meta
+          name="twitter:description"
+          content="Learn how BVM helps enterprises accelerate growth through AI Enablement, Generative AI, Intelligent Automation, Cloud Transformation, and Digital Engineering."
+        />
+        <meta name="twitter:image" content="https://bvmcs.com/bvm-logo.svg" />
       </Helmet>
 
       {/* Hero */}
-      <section className="pt-40 pb-24 text-center bg-[#050505] text-white relative overflow-hidden">
+      <section className="pt-40 pb-24 text-center bg-[#050B18] text-white relative overflow-hidden">
         <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[140px] rounded-full" />
 
@@ -118,7 +135,7 @@ export default function About() {
       </section>
 
       {/* Who We Are */}
-      <section className="py-24 bg-[#050505]">
+      <section className="py-24 bg-[#050B18]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
 
           <div>
@@ -152,7 +169,7 @@ export default function About() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-24 bg-[#080808]">
+      <section className="py-24 bg-[#071022]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16">
@@ -186,7 +203,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-[#050505]">
+      <section className="py-24 bg-[#050B18]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
           <div className="text-center mb-16">
@@ -216,7 +233,7 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="py-24 bg-[#080808]">
+      <section className="py-24 bg-[#071022]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
@@ -238,7 +255,7 @@ export default function About() {
       <TechnologyEcosystem />
 
       {/* Services CTA */}
-      <section className="pb-24 bg-[#050505]">
+      <section className="pb-24 bg-[#050B18]">
         <div className="text-center px-6">
 
           <h2 className="text-3xl font-bold text-white mb-6">

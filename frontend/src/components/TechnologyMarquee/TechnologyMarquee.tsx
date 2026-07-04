@@ -27,7 +27,7 @@ const technologies: Technology[] = [
 
 export default function TechnologyMarquee() {
   return (
-    <section className="relative overflow-hidden bg-[#080808] py-24">
+    <section className="relative overflow-hidden bg-[#071022] py-24">
 
       {/* Background Glow */}
       <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[180px]" />
@@ -163,9 +163,9 @@ export default function TechnologyMarquee() {
           </div>
 
           {/* Fade Edges */}
-          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-28 bg-gradient-to-r from-[#080808] to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-28 bg-gradient-to-r from-[#071022] to-transparent" />
 
-          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-28 bg-gradient-to-l from-[#080808] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-28 bg-gradient-to-l from-[#071022] to-transparent" />
 
         </div>
 

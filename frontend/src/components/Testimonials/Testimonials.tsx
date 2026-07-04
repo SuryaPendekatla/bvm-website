@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import CountUp from "../CountUp/CountUp";
 
 interface Testimonial {
   name: string;
@@ -40,7 +39,7 @@ quote:
 export default function Testimonials() {
 return ( <section
    id="testimonials"
-   className="relative bg-[#080808] py-24 overflow-hidden"
+   className="relative bg-[#071022] py-24 overflow-hidden"
  >
 {/* Background Glow */} <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" /> <div className="absolute bottom-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
 
@@ -120,28 +119,11 @@ return ( <section
         Delivering Results Across Industries
       </h3>
 
-      <p className="text-slate-400 max-w-3xl mx-auto mb-8">
+      <p className="text-slate-400 max-w-3xl mx-auto">
         From financial services and healthcare to retail and technology,
         we help organizations accelerate innovation and achieve measurable
         business impact.
       </p>
-
-      <div className="flex flex-wrap justify-center gap-8">
-        <div>
-          <h4 className="text-3xl font-bold text-blue-400"><CountUp value="100+" /></h4>
-          <p className="text-slate-400 text-sm">Projects Delivered</p>
-        </div>
-
-        <div>
-          <h4 className="text-3xl font-bold text-cyan-400"><CountUp value="95%" /></h4>
-          <p className="text-slate-400 text-sm">Client Satisfaction</p>
-        </div>
-
-        <div>
-          <h4 className="text-3xl font-bold text-purple-400"><CountUp value="15+" /></h4>
-          <p className="text-slate-400 text-sm">Years Experience</p>
-        </div>
-      </div>
     </motion.div>
 
   </div>
