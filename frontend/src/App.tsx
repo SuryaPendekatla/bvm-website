@@ -1,13 +1,15 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
-import ServicesPage from "./pages/Services";
-import Industries from "./pages/Industries";
-import Contact from "./pages/Contact";
 
 import ScrollProgress from "./components/ScrollProgress";
 import ScrollToTop from "./components/ScrollToTop";
+
+const About = lazy(() => import("./pages/About"));
+const ServicesPage = lazy(() => import("./pages/Services"));
+const Industries = lazy(() => import("./pages/Industries"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 export default function App() {
   return (
@@ -15,13 +17,15 @@ export default function App() {
       <ScrollToTop />
       <ScrollProgress />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/industries" element={<Industries />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-screen bg-[#050B18]" />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }

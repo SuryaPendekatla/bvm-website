@@ -148,7 +148,7 @@ export default function Contact() {
                     </h3>
 
                     <p className="text-slate-400">
-                      hello@bvmcs.com
+                      info@bvmcs.com
                     </p>
                   </div>
 
@@ -242,29 +242,57 @@ export default function Contact() {
 
                 <div className="space-y-5">
 
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                  />
+                  <div>
+                    <label htmlFor="contact-name" className="sr-only">
+                      Full Name
+                    </label>
+                    <input
+                      id="contact-name"
+                      name="name"
+                      type="text"
+                      placeholder="Full Name"
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                    />
+                  </div>
 
-                  <input
-                    type="email"
-                    placeholder="Business Email"
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                  />
+                  <div>
+                    <label htmlFor="contact-email" className="sr-only">
+                      Business Email
+                    </label>
+                    <input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      placeholder="Business Email"
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                    />
+                  </div>
 
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                  />
+                  <div>
+                    <label htmlFor="contact-company" className="sr-only">
+                      Company Name
+                    </label>
+                    <input
+                      id="contact-company"
+                      name="company"
+                      type="text"
+                      placeholder="Company Name"
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                    />
+                  </div>
 
-                  <textarea
-                    rows={5}
-                    placeholder="Tell us about your project..."
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                  />
+                  <div>
+                    <label htmlFor="contact-message" className="sr-only">
+                      Project Details
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      name="message"
+                      rows={5}
+                      placeholder="Tell us about your project..."
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                    />
+                  </div>
 
                   <button
                     type="submit"
