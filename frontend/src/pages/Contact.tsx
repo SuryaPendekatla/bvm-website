@@ -121,6 +121,18 @@ export default function Contact() {
         <section className="pb-24 relative z-10">
           <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
+            <div className="mb-10 max-w-2xl">
+              <h2 className="text-4xl font-bold mb-6">
+                Talk To Our Experts
+              </h2>
+
+              <p className="text-slate-400">
+                Whether you're exploring AI adoption, automation,
+                cloud transformation, or digital engineering,
+                our team is ready to help.
+              </p>
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-12">
 
               {/* Left Side */}
@@ -129,16 +141,6 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-
-                <h2 className="text-4xl font-bold mb-6">
-                  Talk To Our Experts
-                </h2>
-
-                <p className="text-slate-400 mb-10">
-                  Whether you're exploring AI adoption, automation,
-                  cloud transformation, or digital engineering,
-                  our team is ready to help.
-                </p>
 
                 <div className="space-y-6">
 
@@ -158,7 +160,10 @@ export default function Contact() {
                     </h3>
 
                     <p className="text-slate-400">
-                      +91 XXXXX XXXXX
+                      India: +91 7075958248
+                    </p>
+                    <p className="text-slate-400">
+                      UK: +44 771-635-1898
                     </p>
                   </div>
 
@@ -172,11 +177,15 @@ export default function Contact() {
                         <span className="inline-block text-[11px] font-semibold uppercase tracking-wide text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 rounded-full px-2.5 py-0.5 mb-1.5">
                           Primary
                         </span>
+                        <p className="text-white font-medium">
+                          BVM IT Consulting Services India Private Limited
+                        </p>
                         <p className="text-slate-400">
-                          Hyderabad, Telangana 500076, IN
+                          Flat No: 303, Gayathri Heights, Jubilee Enclave,
+                          HITEC City, Hyderabad, Telangana 500081
                         </p>
                         <a
-                          href="https://www.google.com/maps/search/?api=1&query=Hyderabad%2C+Telangana+500076%2C+India"
+                          href="https://www.google.com/maps/search/?api=1&query=Flat+No+303%2C+Gayathri+Heights%2C+Jubilee+Enclave%2C+HITEC+City%2C+Hyderabad%2C+Telangana+500081"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-cyan-400 hover:text-cyan-300 transition text-sm font-medium"
@@ -186,12 +195,18 @@ export default function Contact() {
                       </div>
 
                       <div>
+                        <span className="inline-block text-[11px] font-semibold uppercase tracking-wide text-slate-300 bg-white/5 border border-white/10 rounded-full px-2.5 py-0.5 mb-1.5">
+                          UK Office
+                        </span>
+                        <p className="text-white font-medium">
+                          BVM Consultancy Services
+                        </p>
                         <p className="text-slate-400">
                           Office No B604, Vista Centre, 50 Salisbury Road,
-                          Hounslow, United Kingdom TW3 1NQ, GB
+                          Hounslow, TW4 6JQ, GB
                         </p>
                         <a
-                          href="https://www.google.com/maps/search/?api=1&query=Office+No+B604%2C+Vista+Centre%2C+50+Salisbury+Road%2C+Hounslow%2C+United+Kingdom+TW3+1NQ"
+                          href="https://www.google.com/maps/search/?api=1&query=Office+No+B604%2C+Vista+Centre%2C+50+Salisbury+Road%2C+Hounslow%2C+TW4+6JQ"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-cyan-400 hover:text-cyan-300 transition text-sm font-medium"
@@ -201,6 +216,9 @@ export default function Contact() {
                       </div>
 
                       <div>
+                        <span className="inline-block text-[11px] font-semibold uppercase tracking-wide text-slate-300 bg-white/5 border border-white/10 rounded-full px-2.5 py-0.5 mb-1.5">
+                          US Office
+                        </span>
                         <p className="text-slate-400">
                           620 Inverrary Ln, Deerfield, IL 60015, US
                         </p>
@@ -218,6 +236,86 @@ export default function Contact() {
 
                 </div>
 
+              </motion.div>
+
+              {/* Contact Form */}
+              <div>
+                <motion.form
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className={`bvm-card ${cardAccents[3]} p-8`}
+                >
+
+                  <div className="space-y-5">
+
+                    <div>
+                      <label htmlFor="contact-name" className="sr-only">
+                        Full Name
+                      </label>
+                      <input
+                        id="contact-name"
+                        name="name"
+                        type="text"
+                        placeholder="Full Name"
+                        className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="contact-email" className="sr-only">
+                        Business Email
+                      </label>
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        placeholder="Business Email"
+                        className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="contact-company" className="sr-only">
+                        Company Name
+                      </label>
+                      <input
+                        id="contact-company"
+                        name="company"
+                        type="text"
+                        placeholder="Company Name"
+                        className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="contact-message" className="sr-only">
+                        Project Details
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        rows={5}
+                        placeholder="Tell us about your project..."
+                        className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 py-4 rounded-xl font-semibold hover:scale-[1.02] transition"
+                    >
+                      Book a Strategy Call
+                    </button>
+
+                    <p className="text-center text-slate-500 text-sm">
+                      No spam. We typically respond within 24 business hours.
+                    </p>
+
+                  </div>
+
+                </motion.form>
+
                 <div className="mt-8 bvm-banner-card p-6">
 
                   <h3 className="text-xl font-semibold mb-2">
@@ -230,84 +328,7 @@ export default function Contact() {
 
                 </div>
 
-              </motion.div>
-
-              {/* Contact Form */}
-              <motion.form
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className={`bvm-card ${cardAccents[3]} p-8`}
-              >
-
-                <div className="space-y-5">
-
-                  <div>
-                    <label htmlFor="contact-name" className="sr-only">
-                      Full Name
-                    </label>
-                    <input
-                      id="contact-name"
-                      name="name"
-                      type="text"
-                      placeholder="Full Name"
-                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="contact-email" className="sr-only">
-                      Business Email
-                    </label>
-                    <input
-                      id="contact-email"
-                      name="email"
-                      type="email"
-                      placeholder="Business Email"
-                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="contact-company" className="sr-only">
-                      Company Name
-                    </label>
-                    <input
-                      id="contact-company"
-                      name="company"
-                      type="text"
-                      placeholder="Company Name"
-                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="contact-message" className="sr-only">
-                      Project Details
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      rows={5}
-                      placeholder="Tell us about your project..."
-                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 py-4 rounded-xl font-semibold hover:scale-[1.02] transition"
-                  >
-                    Book a Strategy Call
-                  </button>
-
-                  <p className="text-center text-slate-500 text-sm">
-                    No spam. We typically respond within 24 business hours.
-                  </p>
-
-                </div>
-
-              </motion.form>
+              </div>
 
             </div>
 

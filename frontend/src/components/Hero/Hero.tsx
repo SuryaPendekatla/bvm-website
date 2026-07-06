@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import HeroGlobe from "../HeroGlobe/HeroGlobe";
 import Particles from "../Particles/Particles";
-import InteractiveHoverButton from "../InteractiveHoverButton/InteractiveHoverButton";
 
 export default function Hero() {
   return (
@@ -30,7 +30,7 @@ export default function Hero() {
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.02] tracking-[-0.03em]">
-            Accelerate Enterprise Growth
+            Accelerate Growth
             <br />
 
             <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
@@ -39,7 +39,7 @@ export default function Hero() {
 
             <br />
 
-            Digital Transformation
+            Transformation
           </h1>
 
           <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-slate-300/90">
@@ -54,13 +54,19 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.15, duration: 0.3 }}
           >
-            <InteractiveHoverButton to="/contact">
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition text-center"
+            >
               Book a Strategy Call
-            </InteractiveHoverButton>
+            </Link>
 
-            <InteractiveHoverButton to="/services">
+            <Link
+              to="/services"
+              className="border border-white/20 hover:border-cyan-400 hover:bg-white/5 transition-all duration-300 px-8 py-4 rounded-xl text-center"
+            >
               Explore Services
-            </InteractiveHoverButton>
+            </Link>
           </motion.div>
         </motion.div>
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
-import InteractiveHoverButton from "../InteractiveHoverButton/InteractiveHoverButton";
 
 interface NavLink {
   name: string;
@@ -96,9 +96,13 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <InteractiveHoverButton to="/contact" className="px-5 py-3 text-sm font-medium">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 px-5 py-3 rounded-xl text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(34,211,238,0.5)]"
+            >
               Book a Strategy Call
-            </InteractiveHoverButton>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Hamburger */}

@@ -121,7 +121,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bvm-banner-card p-10 text-center"
+          className="mt-20 bvm-banner-card p-10 text-center"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
             Trusted Transformation Partner

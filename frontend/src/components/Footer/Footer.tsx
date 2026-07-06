@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 relative z-10">
 
         {/* Main Footer Grid */}
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
 
           {/* Company */}
           <div>
@@ -231,25 +231,6 @@ export default function Footer() {
                 </Link>
               </li>
 
-            </ul>
-
-          </div>
-
-          {/* Contact */}
-          <div>
-
-            <div className="h-11 flex items-center mb-5">
-              <h4 className="text-white font-semibold">
-                Contact
-              </h4>
-            </div>
-
-            <ul className="space-y-3 text-slate-400">
-              <li>info@bvmcs.com</li>
-              <li>+91 XXXXX XXXXX</li>
-              <li>Hyderabad, IN (HQ)</li>
-              <li>Hounslow, UK</li>
-              <li>Deerfield, IL, US</li>
             </ul>
 
           </div>

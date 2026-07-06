@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import InteractiveHoverButton from "../components/InteractiveHoverButton/InteractiveHoverButton";
 
 export default function NotFound() {
   return (
@@ -25,9 +25,12 @@ export default function NotFound() {
           </p>
 
           <div className="flex justify-center">
-            <InteractiveHoverButton to="/">
+            <Link
+              to="/"
+              className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition"
+            >
               Back to Home
-            </InteractiveHoverButton>
+            </Link>
           </div>
         </div>
       </section>
