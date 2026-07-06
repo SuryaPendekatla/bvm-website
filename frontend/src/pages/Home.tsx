@@ -12,7 +12,6 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import CTA from "../components/CTA/CTA";
 import Process from "../components/Process/Process";
 import FAQ from "../components/FAQ/FAQ";
-import TechnologyEcosystem from "../components/TechnologyEcosystem/TechnologyEcosystem";
 import Roadmap from "../components/Roadmap/Roadmap";
 import { Helmet } from "react-helmet-async";
 
@@ -62,8 +61,6 @@ export default function Home() {
       <Industries />
 
       <WhyChooseUs />
-
-      <TechnologyEcosystem />
 
       <Roadmap />
 

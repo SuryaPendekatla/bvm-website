@@ -53,12 +53,11 @@ export default function Process() {
           </p>
 
           <h2 className="text-5xl font-bold text-white mb-6">
-            From Strategy To Scale
+            Our Approach In Four Steps
           </h2>
 
           <p className="text-slate-400 max-w-3xl mx-auto">
-            We guide organizations through every stage of their AI
-            transformation journey.
+            A simple framework we follow on every engagement.
           </p>
         </div>
 
