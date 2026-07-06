@@ -1,26 +1,18 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
-import Meteors from "../Meteors/Meteors";
-import neuralNetworkVideo from "../../assets/neural-network-bg.mp4";
 
 const FULL_TEXT = "BVMCS";
 const TYPE_SPEED = 220;
 const START_DELAY = 500;
 
-const VIEWBOX_WIDTH = 1000;
-const VIEWBOX_HEIGHT = 260;
-const FONT_SIZE = 210;
-
 function FooterWordmark() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<SVGTextElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0 });
   const hasStartedRef = useRef(false);
   const [text, setText] = useState("");
-  const [cursorX, setCursorX] = useState(VIEWBOX_WIDTH / 2);
   const isDone = text.length === FULL_TEXT.length;
 
   useEffect(() => {
@@ -38,70 +30,23 @@ function FooterWordmark() {
     return () => timeouts.forEach(clearTimeout);
   }, [isInView]);
 
-  useLayoutEffect(() => {
-    if (textRef.current) {
-      const width = textRef.current.getComputedTextLength();
-      setCursorX(VIEWBOX_WIDTH / 2 + width / 2 + 10);
-    }
-  }, [text]);
-
   return (
     <div
       ref={containerRef}
       className="relative overflow-hidden select-none pointer-events-none py-4 lg:py-6"
     >
-      <Meteors number={20} />
-
-      <svg
-        viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
-        className="mx-auto block w-full max-w-5xl"
-        style={{ aspectRatio: `${VIEWBOX_WIDTH} / ${VIEWBOX_HEIGHT}` }}
-      >
-        <defs>
-          <mask id="wordmark-video-mask">
-            <rect width="100%" height="100%" fill="black" />
-            <text
-              ref={textRef}
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dominantBaseline="central"
-              fontFamily="'Plus Jakarta Sans', sans-serif"
-              fontWeight="800"
-              letterSpacing="6"
-              fontSize={FONT_SIZE}
-              fill="white"
-            >
-              {text}
-            </text>
-          </mask>
-        </defs>
-
-        {isInView && (
-          <foreignObject width="100%" height="100%" mask="url(#wordmark-video-mask)">
-            <video
-              src={neuralNetworkVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="h-full w-full object-cover"
-            />
-          </foreignObject>
-        )}
-
+      <p className="text-center font-extrabold leading-none tracking-[0.1em] sm:tracking-[0.15em] bg-gradient-to-b from-white/40 via-white/15 to-white/0 bg-clip-text text-transparent text-[clamp(3.5rem,20vw,15rem)]">
+        {text}
         {!isDone && (
-          <motion.rect
-            x={cursorX}
-            y={VIEWBOX_HEIGHT / 2 - FONT_SIZE * 0.35}
-            width={FONT_SIZE * 0.08}
-            height={FONT_SIZE * 0.7}
-            fill="white"
+          <motion.span
+            aria-hidden="true"
+            className="inline-block w-[0.5em] ml-2 bg-white/40 align-middle"
+            style={{ height: "0.75em" }}
             animate={{ opacity: [1, 1, 0, 0] }}
             transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 0.5, 1] }}
           />
         )}
-      </svg>
+      </p>
     </div>
   );
 }
