@@ -3,9 +3,11 @@ import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
+import Meteors from "../Meteors/Meteors";
 
 const FULL_TEXT = "BVMCS";
 const TYPE_SPEED = 220;
+
 const START_DELAY = 500;
 
 function FooterWordmark() {
@@ -35,6 +37,8 @@ function FooterWordmark() {
       ref={containerRef}
       className="relative overflow-hidden select-none pointer-events-none py-4 lg:py-6"
     >
+      <Meteors number={20} />
+
       <p className="text-center font-extrabold leading-none tracking-[0.1em] sm:tracking-[0.15em] bg-gradient-to-b from-white/40 via-white/15 to-white/0 bg-clip-text text-transparent text-[26vw] sm:text-[20vw] lg:text-[15rem]">
         {text}
         {!isDone && (
@@ -293,14 +297,6 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0 text-slate-500 text-sm">
-
-            <a href="#" className="hover:text-cyan-400 transition">
-              Privacy Policy
-            </a>
-
-            <a href="#" className="hover:text-cyan-400 transition">
-              Terms of Service
-            </a>
 
             <a href="#" className="hover:text-cyan-400 transition">
               LinkedIn
