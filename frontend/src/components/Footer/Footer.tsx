@@ -39,7 +39,7 @@ function FooterWordmark() {
     >
       <Meteors number={20} />
 
-      <p className="text-center font-extrabold leading-none tracking-[0.1em] sm:tracking-[0.15em] bg-gradient-to-b from-white/40 via-white/15 to-white/0 bg-clip-text text-transparent text-[26vw] sm:text-[20vw] lg:text-[15rem]">
+      <p className="text-center font-extrabold leading-none tracking-[0.1em] sm:tracking-[0.15em] bg-gradient-to-b from-white/40 via-white/15 to-white/0 bg-clip-text text-transparent text-[clamp(3.5rem,20vw,15rem)]">
         {text}
         {!isDone && (
           <motion.span

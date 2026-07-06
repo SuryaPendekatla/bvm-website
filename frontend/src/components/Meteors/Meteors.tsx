@@ -5,7 +5,8 @@ interface MeteorsProps {
 }
 
 export default function Meteors({ number = 20 }: MeteorsProps) {
-  const meteors = Array.from({ length: number });
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+  const meteors = Array.from({ length: isMobile ? Math.min(number, 10) : number });
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -67,6 +67,8 @@ export default function HeroGlobe() {
     if (!canvas) return;
 
     let width = canvas.offsetWidth;
+    const isMobile = window.innerWidth < 640;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const onResize = () => {
       if (canvas) width = canvas.offsetWidth;
@@ -74,14 +76,14 @@ export default function HeroGlobe() {
     window.addEventListener("resize", onResize);
 
     const globe = createGlobe(canvas, {
-      devicePixelRatio: 2,
+      devicePixelRatio: dpr,
       width: width * 2,
       height: width * 2,
       phi: 0,
       theta: 0.28,
       dark: 1,
       diffuse: 1.2,
-      mapSamples: 16000,
+      mapSamples: isMobile ? 8000 : 16000,
       mapBrightness: 6,
       baseColor: [0.25, 0.3, 0.45],
       markerColor: [0.13, 0.83, 0.93],

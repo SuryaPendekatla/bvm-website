@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 
 export default function Particles() {
+  const count = typeof window !== "undefined" && window.innerWidth < 640 ? 18 : 35;
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-      {[...Array(35)].map((_: unknown, index: number) => (
+      {[...Array(count)].map((_: unknown, index: number) => (
         <motion.div
           key={index}
           className={`absolute rounded-full shadow-[0_0_12px_currentColor] ${
