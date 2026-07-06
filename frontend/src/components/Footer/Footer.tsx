@@ -59,8 +59,8 @@ export default function Footer() {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
 
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 blur-[150px]" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 blur-[150px]" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 blur-[75px]" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 blur-[75px]" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 relative z-10">
 

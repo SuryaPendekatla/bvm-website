@@ -13,8 +13,8 @@ export default function CTA() {
           className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-blue-900/30 via-cyan-900/20 to-purple-900/30 backdrop-blur-xl p-12 md:p-16 text-center"
         >
           {/* Background Glow */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-[120px]" />
+          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-[60px]" />
+          <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-[60px]" />
 
           <div className="relative z-10">
             <p className="text-blue-400 uppercase tracking-widest mb-4">

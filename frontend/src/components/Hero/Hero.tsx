@@ -14,16 +14,16 @@ export default function Hero() {
       </div>
 
       {/* Background Glow Effects */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px]" />
+      <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[60px]" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-[60px]" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 grid lg:grid-cols-[1.02fr_0.98fr] gap-12 lg:gap-16 items-center relative z-10">
 
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.35 }}
         >
           <p className="text-blue-500 uppercase tracking-[0.25em] text-sm mb-4">
             AI-FIRST. HUMAN-LED.
@@ -52,7 +52,7 @@ export default function Hero() {
             className="mt-8 flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.15, duration: 0.3 }}
           >
             <InteractiveHoverButton to="/contact">
               Book a Strategy Call
@@ -69,7 +69,7 @@ export default function Hero() {
           className="flex justify-center items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
+          transition={{ delay: 0.1, duration: 0.4 }}
         >
           <HeroGlobe />
         </motion.div>

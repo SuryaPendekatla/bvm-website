@@ -93,8 +93,8 @@ export default function Industries() {
       {/* Hero */}
       <section className="pt-40 pb-24 text-center bg-[#050B18] text-white relative overflow-hidden">
 
-        <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[140px] rounded-full" />
+        <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[70px] rounded-full" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[70px] rounded-full" />
 
         <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
 

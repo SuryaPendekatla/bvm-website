@@ -30,8 +30,8 @@ export default function TechnologyMarquee() {
     <section className="relative overflow-hidden bg-[#071022] py-24">
 
       {/* Background Glow */}
-      <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[180px]" />
-      <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-purple-500/10 blur-[180px]" />
+      <div className="absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[90px]" />
+      <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-purple-500/10 blur-[90px]" />
 
       {/* Top Accent */}
       <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />

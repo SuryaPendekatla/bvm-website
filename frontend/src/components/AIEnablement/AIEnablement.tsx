@@ -69,8 +69,8 @@ export default function AIEnablement() {
       id="ai-enable"
       className="relative bg-[#0A1428] py-24 overflow-hidden"
     >
-      <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
+      <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[60px]" />
+      <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[60px]" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
         <motion.div

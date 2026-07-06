@@ -44,8 +44,8 @@ export default function Contact() {
       <main className="bg-[#050B18] text-white min-h-screen overflow-hidden">
 
         {/* Background Glow */}
-        <div className="fixed top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[140px] rounded-full" />
-        <div className="fixed bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[140px] rounded-full" />
+        <div className="fixed top-20 left-20 w-96 h-96 bg-cyan-500/10 blur-[70px] rounded-full" />
+        <div className="fixed bottom-20 right-20 w-96 h-96 bg-purple-500/10 blur-[70px] rounded-full" />
 
         {/* Hero */}
         <section className="pt-40 pb-20 text-center relative z-10">

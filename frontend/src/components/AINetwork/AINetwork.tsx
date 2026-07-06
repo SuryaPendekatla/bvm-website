@@ -53,8 +53,8 @@ export default function AINetwork() {
         style={{ x: mouseX, y: mouseY }}
       >
         {/* Soft atmospheric radial glow layers blending out */}
-        <div className="absolute inset-0 bg-purple-500/5 blur-[140px] rounded-full pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute inset-0 bg-purple-500/5 blur-[70px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-purple-600/10 blur-[50px] rounded-full pointer-events-none" />
 
         {/* Ambient floating background particles */}
         {[...Array(20)].map((_: unknown, i: number) => (

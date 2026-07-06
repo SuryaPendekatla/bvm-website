@@ -37,10 +37,10 @@ export default function Navbar() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050B18]/80 backdrop-blur-2xl border-b border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          ? "bg-[#050B18]/95 backdrop-blur-sm border-b border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
           : "bg-transparent"
       }`}
     >
