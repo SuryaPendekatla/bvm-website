@@ -1,17 +1,51 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  LayoutGrid,
+  Package,
+  Webhook,
+  ShieldCheck,
+  type LucideIcon,
+} from "lucide-react";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
+
+interface NavChild {
+  name: string;
+  path: string;
+  icon: LucideIcon;
+}
 
 interface NavLink {
   name: string;
   path: string;
+  children?: NavChild[];
 }
+
+const navLinks: NavLink[] = [
+  { name: "Home", path: "/" },
+  {
+    name: "Products",
+    path: "/products",
+    children: [
+      { name: "Overview", path: "/products", icon: LayoutGrid },
+      { name: "WhiteBooks Softwares", path: "/products#softwares", icon: Package },
+      { name: "WhiteBooks APIs", path: "/products#apis", icon: Webhook },
+      { name: "Certifications", path: "/products#certifications", icon: ShieldCheck },
+    ],
+  },
+  { name: "Services", path: "/services" },
+  { name: "Industries", path: "/industries" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState<boolean>(false);
 
   const location = useLocation();
 
@@ -24,14 +58,6 @@ export default function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks: NavLink[] = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Industries", path: "/industries" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-  ];
 
   return (
     <motion.header
@@ -72,23 +98,70 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className="relative group text-slate-300 hover:text-white transition"
-            >
-              {link.name}
+          {navLinks.map((link) =>
+            link.children ? (
+              <div key={link.path} className="relative group">
+                <Link
+                  to={link.path}
+                  className="relative inline-flex items-center gap-1 text-slate-300 hover:text-white transition"
+                >
+                  {link.name}
+                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
 
-              <span
-                className={`absolute -bottom-1 left-0 h-[2px] bg-cyan-400 transition-all duration-300 ${
-                  location.pathname === link.path
-                    ? "w-full"
-                    : "w-0 group-hover:w-full"
-                }`}
-              />
-            </Link>
-          ))}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-[2px] bg-cyan-400 transition-all duration-300 ${
+                      location.pathname === link.path
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+
+                <div
+                  className="
+                    absolute left-1/2 -translate-x-1/2 top-full pt-3
+                    opacity-0 invisible translate-y-1
+                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                    group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0
+                    transition-all duration-200 z-50
+                  "
+                >
+                  <div className="w-64 rounded-2xl border border-white/10 bg-[#0A1428]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-2">
+                    {link.children.map((child) => {
+                      const Icon = child.icon;
+
+                      return (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-300 hover:text-white hover:bg-white/5 transition"
+                        >
+                          <Icon className="w-4 h-4 text-cyan-400 shrink-0" />
+                          {child.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="relative group text-slate-300 hover:text-white transition"
+              >
+                {link.name}
+
+                <span
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-cyan-400 transition-all duration-300 ${
+                    location.pathname === link.path
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Right Side */}
@@ -157,20 +230,90 @@ export default function Navbar() {
           >
             <div className="px-6 py-6 flex flex-col divide-y divide-white/5">
 
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setMenuOpen(false)}
-                  className={`py-3.5 text-lg transition ${
-                    location.pathname === link.path
-                      ? "text-cyan-400"
-                      : "text-slate-300 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.children ? (
+                  <div key={link.path}>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={link.path}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setMobileProductsOpen(false);
+                        }}
+                        className={`py-3.5 text-lg transition ${
+                          location.pathname === link.path
+                            ? "text-cyan-400"
+                            : "text-slate-300 hover:text-white"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+
+                      <button
+                        type="button"
+                        onClick={() => setMobileProductsOpen((prev) => !prev)}
+                        aria-label={
+                          mobileProductsOpen
+                            ? `Collapse ${link.name} sections`
+                            : `Expand ${link.name} sections`
+                        }
+                        aria-expanded={mobileProductsOpen}
+                        className="p-2 -mr-2 text-slate-400 hover:text-white transition"
+                      >
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            mobileProductsOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    <AnimatePresence>
+                      {mobileProductsOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="overflow-hidden pb-3"
+                        >
+                          {link.children.map((child) => {
+                            const Icon = child.icon;
+
+                            return (
+                              <Link
+                                key={child.path}
+                                to={child.path}
+                                onClick={() => {
+                                  setMenuOpen(false);
+                                  setMobileProductsOpen(false);
+                                }}
+                                className="flex items-center gap-3 py-2.5 pl-1 text-slate-400 hover:text-white transition"
+                              >
+                                <Icon className="w-4 h-4 text-cyan-400 shrink-0" />
+                                {child.name}
+                              </Link>
+                            );
+                          })}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={`py-3.5 text-lg transition ${
+                      location.pathname === link.path
+                        ? "text-cyan-400"
+                        : "text-slate-300 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
 
               <Link
                 to="/contact"
