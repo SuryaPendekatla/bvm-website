@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ShieldCheck } from "lucide-react";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
+import isoLogo from "../../assets/logos/iso-certified.svg";
 
 const FULL_TEXT = "BVMCS";
 const TYPE_SPEED = 220;
@@ -97,9 +97,8 @@ export default function Footer() {
             </p>
 
             {/* Certification Badge */}
-            <div className="inline-flex items-center gap-2 mt-5 text-xs font-medium text-emerald-300 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-3 py-1.5">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              ISO 27001 Certified
+            <div className="mt-6 flex items-center gap-4">
+              <img src={isoLogo} alt="ISO 27001:2022 Certified" className="h-12 w-auto" />
             </div>
 
             {/* Social Links */}

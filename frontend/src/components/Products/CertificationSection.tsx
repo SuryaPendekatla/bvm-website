@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Lock } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 import gspLogo from "../../assets/logos/gsp-certified.svg";
+import isoLogo from "../../assets/logos/iso-certified.svg";
 
 interface Certification {
   title: string;
@@ -65,22 +65,15 @@ export default function CertificationSection() {
                 index === 0 ? "bvm-card-accent-cyan" : "bvm-card-accent-violet"
               } p-10 flex flex-col sm:flex-row items-center sm:items-start gap-8 text-center sm:text-left`}
             >
-              {index === 0 ? (
-                <img
-                  src={gspLogo}
-                  alt="Licensed GST Suvidha Provider badge"
-                  className="h-24 w-auto shrink-0"
-                />
-              ) : (
-                <div className="relative shrink-0">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border-2 border-purple-400/40 flex items-center justify-center">
-                    <ShieldCheck className="w-11 h-11 text-purple-300" />
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-[#0A1428] border border-purple-400/40 flex items-center justify-center">
-                    <Lock className="w-4 h-4 text-cyan-300" />
-                  </div>
-                </div>
-              )}
+              <img
+                src={index === 0 ? gspLogo : isoLogo}
+                alt={
+                  index === 0
+                    ? "Licensed GST Suvidha Provider badge"
+                    : "ISO 27001:2022 Certified badge"
+                }
+                className="h-24 w-auto shrink-0"
+              />
 
               <div>
                 <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-1">

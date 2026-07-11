@@ -1,10 +1,9 @@
 import { useRef } from "react";
-import AnimatedBeam from "./AnimatedBeam";
+import { motion } from "framer-motion";
+import OrthogonalBeam from "./OrthogonalBeam";
 import BeamNode from "./BeamNode";
 import { apis } from "./apiBeamData";
 import whitebooksIcon from "../../assets/logos/whitebooks-icon.svg";
-
-const curvatures = [50, 20, -20, -50];
 
 export default function ApiBeamDiagramMobile() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,9 +20,31 @@ export default function ApiBeamDiagramMobile() {
       <div className="flex gap-4">
         {/* Spine — WhiteBooks hub, vertically centered against the cards */}
         <div className="w-16 shrink-0 flex flex-col items-center justify-center gap-2">
-          <BeamNode ref={hubRef} className="size-16 shrink-0">
-            <img src={whitebooksIcon} alt="WhiteBooks" className="w-8 h-8" />
-          </BeamNode>
+          <a
+            href="https://whitebooks.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explore WhiteBooks"
+            className="group relative flex items-center justify-center"
+          >
+            <motion.div
+              className="absolute top-1/2 left-1/2 w-32 h-32 rounded-full blur-2xl"
+              style={{
+                translateX: "-50%",
+                translateY: "-50%",
+                background:
+                  "radial-gradient(circle, rgba(34,211,238,0.75) 0%, rgba(168,85,247,0.55) 55%, transparent 75%)",
+              }}
+              animate={{ opacity: [0.6, 1, 0.6], scale: [0.85, 1.15, 0.85] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <BeamNode
+              ref={hubRef}
+              className="size-16 shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_-4px_rgba(34,211,238,0.9)]"
+            >
+              <img src={whitebooksIcon} alt="WhiteBooks" className="w-8 h-8" />
+            </BeamNode>
+          </a>
           <span className="text-[10px] uppercase tracking-widest text-slate-400 text-center leading-tight">
             WhiteBooks
           </span>
@@ -73,16 +94,16 @@ export default function ApiBeamDiagramMobile() {
 
       {/* Beams */}
       {apis.map((api, index) => (
-        <AnimatedBeam
+        <OrthogonalBeam
           key={api.title}
           containerRef={containerRef}
           fromRef={hubRef}
           toRef={cardRefs[index]}
-          curvature={curvatures[index]}
+          bendGap={24}
           duration={4 + index * 0.4}
           delay={index * 0.2}
-          startGap={40}
-          endGap={20}
+          startGap={8}
+          endGap={12}
         />
       ))}
     </div>

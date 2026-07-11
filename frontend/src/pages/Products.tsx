@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import MainLayout from "../layouts/MainLayout";
-import ProductHero from "../components/Products/ProductHero";
 import SoftwareSection from "../components/Products/SoftwareSection";
 import ApiSection from "../components/Products/ApiSection";
 import CertificationSection from "../components/Products/CertificationSection";
+import OverviewSection from "../components/Products/OverviewSection";
 import AIEnablement from "../components/AIEnablement/AIEnablement";
 import CTA from "../components/CTA/CTA";
 
@@ -36,13 +36,13 @@ export default function Products() {
         <meta name="twitter:image" content="https://bvmcs.com/bvm-logo.svg" />
       </Helmet>
 
-      <ProductHero />
+      <ApiSection />
 
       <SoftwareSection />
 
-      <ApiSection />
-
       <CertificationSection />
+
+      <OverviewSection />
 
       <AIEnablement />
 

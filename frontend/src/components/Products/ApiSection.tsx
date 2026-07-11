@@ -4,10 +4,21 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 import ApiBeamDiagram from "./ApiBeamDiagram";
 import ApiBeamDiagramMobile from "./ApiBeamDiagramMobile";
+import neuralNetworkBg from "../../assets/neural-network-bg.mp4";
 
 export default function ApiSection() {
   return (
-    <section id="apis" className="relative bg-[#0A1428] py-24 overflow-hidden scroll-mt-24">
+    <section id="apis" className="relative bg-[#0A1428] pt-40 pb-24 overflow-hidden scroll-mt-24">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.08] pointer-events-none"
+      >
+        <source src={neuralNetworkBg} type="video/mp4" />
+      </video>
+
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[60px]" />
       <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[60px]" />
 
@@ -23,12 +34,12 @@ export default function ApiSection() {
             WhiteBooks API's
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Powerful API's
             <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               For Developers
             </span>
-          </h2>
+          </h1>
 
           <p className="text-slate-400 max-w-3xl mx-auto text-lg">
             Direct, sub-second integrations for GST filing, e-way bills,
@@ -46,22 +57,26 @@ export default function ApiSection() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-10 md:-mt-6">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 px-6 py-3 rounded-lg text-sm font-medium text-white transition-all duration-300 hover:scale-105"
-          >
-            Get API Access
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+  <a
+    href="https://accounts.whitebooks.in/signup?type=Developer&subscrid=&inviteId"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 px-6 py-3 rounded-lg text-sm font-medium text-white transition-all duration-300 hover:scale-105"
+  >
+    Get API Access
+    <ArrowRight className="w-3.5 h-3.5" />
+  </a>
 
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-6 py-3 rounded-lg text-sm font-medium text-white hover:bg-white/10 hover:border-white/25 transition"
-          >
-            Explore Whitebooks
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
+  <a
+    href="https://whitebooks.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 border border-white/15 bg-white/5 px-6 py-3 rounded-lg text-sm font-medium text-white hover:bg-white/10 hover:border-white/25 transition"
+  >
+    Explore Whitebooks
+    <ArrowUpRight className="w-3.5 h-3.5" />
+  </a>
+</div>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
