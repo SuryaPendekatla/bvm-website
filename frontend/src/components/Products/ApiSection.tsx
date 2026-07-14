@@ -1,24 +1,12 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { fadeUp } from "../../utils/animations";
 import ApiBeamDiagram from "./ApiBeamDiagram";
 import ApiBeamDiagramMobile from "./ApiBeamDiagramMobile";
-import neuralNetworkBg from "../../assets/neural-network-bg.mp4";
 
 export default function ApiSection() {
   return (
-    <section id="apis" className="relative bg-[#0A1428] pt-40 pb-24 overflow-hidden scroll-mt-24">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.08] pointer-events-none"
-      >
-        <source src={neuralNetworkBg} type="video/mp4" />
-      </video>
-
+    <section id="apis" className="relative bg-[#0A1428] py-24 overflow-hidden scroll-mt-24">
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[60px]" />
       <div className="absolute bottom-20 right-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[60px]" />
 
@@ -34,12 +22,12 @@ export default function ApiSection() {
             WhiteBooks API's
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Powerful API's
             <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               For Developers
             </span>
-          </h1>
+          </h2>
 
           <p className="text-slate-400 max-w-3xl mx-auto text-lg">
             Direct, sub-second integrations for GST filing, e-way bills,

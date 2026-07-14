@@ -30,10 +30,10 @@ const navLinks: NavLink[] = [
     name: "Products",
     path: "/products",
     children: [
-      { name: "WhiteBooks APIs", path: "/products#apis", icon: Webhook },
+      { name: "Overview", path: "/products", icon: LayoutGrid },
       { name: "WhiteBooks Softwares", path: "/products#softwares", icon: Package },
+      { name: "WhiteBooks APIs", path: "/products#apis", icon: Webhook },
       { name: "Certifications", path: "/products#certifications", icon: ShieldCheck },
-      { name: "Overview", path: "/products#overview", icon: LayoutGrid },
     ],
   },
   { name: "Services", path: "/services" },

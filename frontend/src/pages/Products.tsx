@@ -36,13 +36,13 @@ export default function Products() {
         <meta name="twitter:image" content="https://bvmcs.com/bvm-logo.svg" />
       </Helmet>
 
-      <ApiSection />
+      <OverviewSection />
 
       <SoftwareSection />
 
-      <CertificationSection />
+      <ApiSection />
 
-      <OverviewSection />
+      <CertificationSection />
 
       <AIEnablement />
 
