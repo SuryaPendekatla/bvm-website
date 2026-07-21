@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowBigRightDash, ArrowRight } from "lucide-react";
 import whitebooksLogo from "../../assets/logos/whitebooks-logo.svg";
+import gspLogo from "../../assets/logos/gsp-certified.svg";
+import isoLogo from "../../assets/logos/iso-certified.svg";
 
 export default function OverviewSection() {
   return (
@@ -44,18 +45,32 @@ export default function OverviewSection() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-            <Link
-              to="/contact"
+            <a
+              href="https://whitebooks.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(34,211,238,0.5)]"
             >
-              Talk to Our Team
+              Explore WhiteBooks
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
 
-          <div className="inline-flex items-center gap-2 text-slate-400 text-sm border border-white/10 rounded-full px-4 py-2">
-            <ShieldCheck className="w-4 h-4 text-cyan-400" />
-            Licensed GST Suvidha Provider · ISO 27001:2022 Certified
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-3 bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4">
+            <div className="flex items-center gap-2">
+              <img src={gspLogo} alt="Licensed GST Suvidha Provider" className="h-9 w-auto" />
+              <span className="text-slate-300 text-sm text-left leading-snug">
+                Licensed GST Suvidha Provider (GSP)
+                <br className="hidden sm:block" /> — authorised directly by GSTN
+              </span>
+            </div>
+
+            <div className="hidden sm:block w-px h-8 bg-white/10" />
+
+            <div className="flex items-center gap-2">
+              <img src={isoLogo} alt="ISO 27001:2022 Certified" className="h-9 w-auto" />
+              <span className="text-slate-300 text-sm">ISO 27001:2022 Certified</span>
+            </div>
           </div>
         </motion.div>
       </div>

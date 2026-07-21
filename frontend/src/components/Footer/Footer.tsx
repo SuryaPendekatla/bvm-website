@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import bvmlogo from "../../assets/logos/bvm-logo.svg";
 import isoLogo from "../../assets/logos/iso-certified.svg";
+import gspLogo from "../../assets/logos/gsp-certified.svg";
 
 const FULL_TEXT = "BVMCS";
 const TYPE_SPEED = 220;
@@ -98,6 +99,7 @@ export default function Footer() {
 
             {/* Certification Badge */}
             <div className="mt-6 flex items-center gap-4">
+              <img src={gspLogo} alt="Licensed GST Suvidha Provider" className="h-12 w-auto" />
               <img src={isoLogo} alt="ISO 27001:2022 Certified" className="h-12 w-auto" />
             </div>
 
