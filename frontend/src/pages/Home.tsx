@@ -5,6 +5,7 @@ import Metrics from "../components/Metrics/Metrics";
 import AIEnablement from "../components/AIEnablement/AIEnablement";
 import TrustedBy from "../components/TrustedBy/TrustedBy";
 import Services from "../components/Services/Services";
+import ProductsPromo from "../components/ProductsPromo/ProductsPromo";
 import Industries from "../components/Industries/Industries";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import CaseStudies from "../components/CaseStudies/CaseStudies";
@@ -57,6 +58,8 @@ export default function Home() {
       <Process />
 
       <Services />
+
+      <ProductsPromo />
 
       <Industries />
 
