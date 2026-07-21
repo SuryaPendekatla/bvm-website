@@ -53,7 +53,7 @@ export default function ProductsPromo() {
               </div>
 
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                Softwares, APIs & Licensed GSP — All in One Place
+                Softwares & APIs — All in One Place
               </h3>
 
               <p className="text-slate-400 max-w-xl">
